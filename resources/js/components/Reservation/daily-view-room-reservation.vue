@@ -19,42 +19,19 @@
         </div>
         <!-- secondary nav end -->
 
-        <!-- total desha room status start -->
+       
+        <!-- total desha room status end -->
+
+        <!-- floor no zero start -->
         <section>
-            <div class="row">
+            <h1 class="text-center text-muted my-3">Room Check In And Check Out Informatuins</h1>
+            <div class="row my-5 ">
                 <div class=" col-md-2 col-sm-12 m-auto">
                     <div class="card profile-card my-2">
                         <div class="card-body profile-card-info">
-                            <span class="my-3 profile-card-info-icon" data-feather="home"></span>
-                            <h3 class="card-title">34</h3>
-                            <h3 class="card-title">Total Vacant</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 col-sm-12 m-auto">
-                    <div class="card profile-card my-2">
-                        <div class="card-body profile-card-info">
-                            <span class="my-3 profile-card-info-icon" data-feather="bell"></span>
-                            <h3 class="card-title">27</h3>
-                            <h3 class="card-title">Total O/C</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 col-sm-12 m-auto">
-                    <div class="card profile-card my-2">
-                        <div class="card-body profile-card-info">
-                            <span class="my-3 profile-card-info-icon" data-feather="user-minus"></span>
-                            <h3 class="card-title">12</h3>
-                            <h3 class="card-title">Expected C/out</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 col-sm-12 m-auto">
-                    <div class="card profile-card my-2">
-                        <div class="card-body profile-card-info">
-                            <span class="my-3 profile-card-info-icon" data-feather="user-plus"></span>
-                            <h3 class="card-title">19</h3>
-                            <h3 class="card-title">Expected C/IN</h3>
+                            <span class="my-3 profile-card-info-icon" data-feather="user-x"></span>
+                            <h3 class="card-title">14</h3>
+                            <h5 class="card-title">Today C/In</h5>
                         </div>
                     </div>
                 </div>
@@ -62,41 +39,8 @@
                     <div class="card profile-card my-2">
                         <div class="card-body profile-card-info">
                             <span class="my-3 profile-card-info-icon" data-feather="user-x"></span>
-                            <h3 class="card-title">14</h3>
-                            <h3 class="card-title">Today C/out</h3>
-                        </div>
-                    </div>
-                </div>
-                <div class=" col-md-2 col-sm-12 m-auto">
-                    <div class="card profile-card my-2">
-                        <div class="card-body profile-card-info">
-                            <span class="my-3 profile-card-info-icon" data-feather="users"></span>
-                            <h3 class="card-title">17</h3>
-                            <h3 class="card-title">Today C/in</h3>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- total desha room status end -->
-
-        <!-- floor no zero start -->
-        <section>
-            <h1 class="text-center text-muted my-3">FLOOR NO: 0</h1>
-            <div class="row my-5 ">
-                <div class="col-md-3 col-sm-12 m-auto">
-                    <div class="card profile-card my-2">
-                        <div class="card-body d-flex justify-content-around align-items-center">
-                            <img src="backend/img/auditorium3.png" width="80" height="100">
-                            <h6 class="card-subtitle mb-2 text-muted my-3">Ball Room</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-12 m-auto">
-                    <div class="card profile-card my-2">
-                        <div class="card-body d-flex justify-content-around align-items-center">
-                            <img src="backend/img/auditorium3.png" width="100" height="100">
-                            <h3 class="card-subtitle mb-2 text-muted my-3">Stuff Canteen</h3>
+                            <h3 class="card-title">20</h3>
+                            <h5 class="card-title">Today C/out</h5>
                         </div>
                     </div>
                 </div>
@@ -128,7 +72,7 @@
         
 
         <!-- modal start -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" 
             aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
@@ -158,8 +102,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
+                    <!-- start without Booking room Button-->
+                    <div class="row" v-for="allroo in allrooms" :key="allroo.id" v-if="allroo.room_status==0">
+                        <div class="col-lg-6 col-md-6" >
                             <div class="card">
                                 <div class="card-body d-flex justify-content-between align-items-center">
                                     <div class="card-title mb-0">
@@ -190,6 +135,45 @@
                             </div>
                         </div>
                     </div> 
+                    <!-- End Without Booking romm Button-->
+
+                    <!-- start  Booking room Button-->
+                    <div class="row" v-for="allro in allrooms" :key="allro.id" v-if="allro.room_status>0">
+                        <div class="col-lg-4 col-md-4">
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="card-title mb-0">
+                                       
+                                    </div>
+                                    <div class="card-action">
+                                        
+                                        <a  class="btn btn-info" @click="myServiceFunction"  style="color:white;">
+                                            Add Service 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4">
+                            
+                        </div>
+                         <div class="col-lg-4 col-md-4">
+                            <div class="card">
+                                <div class="card-body d-flex justify-content-between align-items-center">
+                                    <div class="card-title mb-0">
+                                        
+                                    </div>
+                                    <div class="card-action">
+                                        
+                                        <a  class="btn btn-info" @click="myCheckOutFunction"   style="color:white;">
+                                            Checkout 
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                    <!-- End  Booking romm Button-->
 
                     <!--Start Reservation  -->
                     <div id="reservationhow" style="display: none; padding:5px;">
@@ -415,6 +399,58 @@
                         </form>
                     </div>
                     <!--end Customer  -->
+
+                     <!--Start Customer  -->
+
+                    <div id="serviceshow" style="display: none; padding:15px;">
+                        <form @submit.prevent="ServiceInsert" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label class="form-label" for="exampleInputText1">Select Customer Name</label>
+                            <select class="form-control" v-model="servicecustomerid">
+                                <option selected  disabled>Select Customer Name</option>
+                                <option :value="customer.id" v-for="customer in customers" style="color:black;">{{ customer.full_name }}</option>  
+                            </select> 
+                            <small class="text-danger" v-if="errors.customerid">{{ errors.customerid[0] }}</small>
+                        </div>
+                           <div class="form-group">
+                                <label class="form-label" for="exampleInputText1">Select Services Name</label>
+                                    <select class="form-control" v-model="selectedServicesPrice">
+                                        <option selected  disabled>Select Services Name</option>
+                                            <option :value="getservice.id" v-for="getservice in getservices" :key="getservice.id" >{{ getservice.service_name }}
+                                            </option>
+                                    </select> 
+                                <small class="text-danger" v-if="errors.selectedServicesPrice">{{ errors.selectedServicesPrice[0] }}</small>
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="exampleInputEmail3">Service unit</label>
+                                <input type="text" class="form-control prc" id="exampleInputEmail3"  placeholder="Service unit" v-model="service_unit">
+                                <small class="text-danger" v-if="errors.service_unit">{{ errors.service_unit[0] }}</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="exampleInputText1">Select Service Price</label>
+                                    <select class="form-control" v-model="get_service_price">
+                                        <option selected  disabled>Select Service Price</option>
+                                        <option :value="getserviceprice.service_price" v-for="getserviceprice in getserviceprices" >{{ getserviceprice.service_price }} TK</option> 
+                                    </select> 
+                                <small class="text-danger" v-if="errors.get_service_price">{{ errors.get_service_price[0] }}</small>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label" for="exampleInputphone">Service total </label>
+                                <input type="text" class="form-control" id="totalprices" placeholder="Service total" v-model="service_total">
+                                <small class="text-danger" v-if="errors.service_total">{{ errors.service_total[0] }}</small>
+                            </div>
+                            <br>                  
+                            
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" >Close</button>
+                            <button type="submit" class="btn btn-primary">Add Service </button>
+                        </div>
+                        </form>
+                    </div>
+                    <!--end Customer  -->
+
  
 
                 </div>
@@ -504,6 +540,7 @@ export default {
     data(){
         return{
             form:{
+                //cistomer
                 roomid : null,
                 room_categ_id :null,
                 room_quantity : null,
@@ -515,6 +552,11 @@ export default {
                 address : null,
                 patho : null,
                 nid : null,
+                //services
+                service_name: null,
+                service_unit:null,
+                service_price : null,
+                service_total : null,
                
             },
             roomOnes:{},
@@ -545,6 +587,12 @@ export default {
             room_prices:'',
             pay_amount:'',
             due_amount:'',
+            // services
+            getservices:{},
+            selectedServicesPrice:'',
+            getserviceprices:{},
+            get_service_price:'',
+            servicecustomerid:'',
         }
 
     },methods:{
@@ -609,6 +657,26 @@ export default {
                 })
             .catch(error => this.errors = error.response.data.errors)
         },
+        ServiceInsert(){
+
+            var data ={
+                servicecustomerid:this.servicecustomerid,  selectedServicesPrice:this.selectedServicesPrice, service_unit:this.service_unit, 
+                get_service_price:this.get_service_price,  service_total:this.service_total,  
+
+            }
+            axios.post('/api/serviceprovider/',data)
+            .then(()=>{
+               
+                 Reload.$emit('afterAdd');
+                  Toast.fire({
+                    icon: 'success',
+                    title: 'service provider added successfully'
+                     })
+                     
+                })
+            .catch(error => this.errors = error.response.data.errors)
+
+        },
         ReservationInsert(){
          
             var data ={
@@ -662,7 +730,27 @@ export default {
             } else {
                 x.style.display = "none";
             }
-        }
+        },
+        myServiceFunction(){
+            var x = document.getElementById("serviceshow");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+        },
+         myCheckOutFunction(){
+            var x = document.getElementById("checkoutshow");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+
+         }
+        
+        
         
     },
     
@@ -687,7 +775,9 @@ export default {
         axios.get('/api/customer-type/')
             .then(({data})=>(this.customertypes = data))
         axios.get('/api/roomcategory')
-            .then(({data})=>(this.roomcategories = data))     
+            .then(({data})=>(this.roomcategories = data)) 
+        axios.get('/api/serviceget')
+        .then(({data})=>(this.getservices = data))    
 
     },
     watch : {
@@ -706,7 +796,15 @@ export default {
         room_floor_id : function(value){
             axios.get('/api/price?price_id=' + this.room_floor_id)
              .then(({data})=>(this.prices = data))
-        }
+        },
+        selectedServicesPrice: function(value){
+            axios.get('/api/selectedservicesprice?price_id=' + this.selectedServicesPrice)
+             .then((
+                {data})=>(this.getserviceprices = data) 
+                
+             )
+             
+        },
     },
     
 }

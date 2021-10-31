@@ -333,6 +333,7 @@ export default {
 
     },
     mounted(){
+             
              axios.get('/api/customer/')
              .then(({data})=>(this.customers = data))
 

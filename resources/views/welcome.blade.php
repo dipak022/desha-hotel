@@ -62,7 +62,7 @@
 
   <div class="container-fluid" >
   <div class="row">
-  <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+  <nav  class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
@@ -124,18 +124,7 @@
               </router-link>
             </li>
 
-            <li class="nav-item">
-              <router-link class="nav-link" to="/store-room-category-image">
-                <span data-feather="file"></span>
-                Room Category Image
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/room-category-image">
-                <span data-feather="file"></span>
-                All Room Category Image
-              </router-link>
-            </li>
+           
 
             <li class="nav-item">
               <router-link class="nav-link" to="/store-customer-type">
@@ -162,7 +151,24 @@
                 All Customer 
               </router-link>
             </li>
-
+            <li class="nav-item">
+              <router-link class="nav-link" to="/daily-view-room-reservation">
+                <span data-feather="file"></span>
+                Today Room Status
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/store-service">
+                <span data-feather="file"></span>
+                Service Create
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/service">
+                <span data-feather="file"></span>
+                All Service 
+              </router-link>
+            </li>
             
             <li class="nav-item">
               <router-link class="nav-link" to="/store-roomimage">
@@ -218,10 +224,17 @@
               </router-link>
             </li>
             
+            
             <li class="nav-item">
-              <router-link class="nav-link" to="/daily-view-room-reservation">
+              <router-link class="nav-link" to="/store-room-category-image">
                 <span data-feather="file"></span>
-                Today Room Status
+                Room Category Image
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/room-category-image">
+                <span data-feather="file"></span>
+                All Room Category Image
               </router-link>
             </li>
             <li class="nav-item">
@@ -248,12 +261,7 @@
                 User Log
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="company-entry.html">
-                <span data-feather="airplay"></span>
-                Company Entry
-              </a>
-            </li>
+            
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="alert-triangle"></span>
@@ -383,7 +391,7 @@
             //alart("Yes Success ");
             if (token) {
                 $("#navbarid").css("display");
-                $("#layoutSidenav_nav").css("display");
+                $("#navbarids").css("display");
 
             }
 

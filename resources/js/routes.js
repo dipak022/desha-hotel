@@ -69,6 +69,11 @@ let editreservation = require('./components/Reservation/edit.vue').default;
 //daily_view_room_reservation component here
 let daily_view_room_reservation = require('./components/Reservation/daily-view-room-reservation.vue').default;
 
+// Services Route here  
+let storeservice = require('./components/Services/create.vue').default;
+let service = require('./components/Services/index.vue').default;
+let editservice = require('./components/Services/edit.vue').default;
+
 
 export const routes = [
 
@@ -138,7 +143,11 @@ export const routes = [
     //daily-view-room-reservation route here
     { path: '/daily-view-room-reservation', component: daily_view_room_reservation, name: 'daily-view-room-reservation' },
 
-    // get room
+    // Service Route here 
+    { path: '/store-service', component: storeservice, name: 'store-service' },
+    { path: '/service', component: service, name: 'service' },
+    { path: '/edit-service/:id', component: editservice, name: 'edit-service' },
+
     
    
 

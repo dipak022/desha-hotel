@@ -3,16 +3,6 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
@@ -45,6 +35,8 @@ Route::apiResource('/hallreservation', 'App\Http\Controllers\Api\HallReservation
 Route::apiResource('/company', 'App\Http\Controllers\Api\CompanyController');
 Route::apiResource('/roomimage', 'App\Http\Controllers\Api\RoomImageController');
 Route::apiResource('/reservation', 'App\Http\Controllers\Api\ReservationController');
+Route::apiResource('/service', 'App\Http\Controllers\Api\ServiceController');
+Route::apiResource('/serviceprovider', 'App\Http\Controllers\Api\ServiceProviderController');
 
 
 
@@ -70,6 +62,10 @@ Route::get('/getroomfloorfives', [App\Http\Controllers\Api\SubroomController::cl
 
 
 Route::get('/get-room/{id}', [App\Http\Controllers\Api\SubroomController::class, 'ModelFaceRoomInfo']);
+
+Route::get('/serviceget', [App\Http\Controllers\Api\SubroomController::class, 'GetservicesName']);
+
+Route::get('/selectedservicesprice', [App\Http\Controllers\Api\SubroomController::class, 'Getselectedservicesprice']);
 
 
 

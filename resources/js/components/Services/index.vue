@@ -9,19 +9,18 @@
                     <div class="card">
                         <div class="card-body d-flex justify-content-between align-items-center">
                             <div class="card-title mb-0">
-                                <h4 class="mb-0">All Reservation List</h4>
+                                <h4 class="mb-0">All  Services</h4>
                             </div>
                             <div class="card-action">
                                 
-                                 <router-link  class="btn btn-info"  to="/store-reservation" >
-                                    <i class="fa fa-plus"></i>Add responsive 
+                                 <router-link  class="btn btn-info"  to="/store-service" >
+                                    <i class="fa fa-plus"></i>Add Services 
                                     </router-link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>            
-            <div class="row">
+            </div>            <div class="row">
                 <div class="col-lg-12">
                     <div class="row">
                         <div class="col-lg-12">
@@ -36,46 +35,24 @@
                                                 <table id="user-list-table" class="table table-striped" role="grid" >
                                                     <thead>
                                                         <tr class="ligth">
-                                                        
-                                                        <th>Room Category</th>
-                                                        <th>Customer  Name</th>
-                                                        <th>Phone Number</th>
-                                                        <th>Address</th>
-                                                        <th>Room Number</th>
-                                                        <th>Floor</th>
-                                                        <th>In Date</th>
-                                                        <th>Out Date</th>
-                                                        <th>Status</th>
-                                                        <th>Total</th>
-                                                        <th>Pay</th>
-                                                        <th>Due</th>
-                                                        
+                                                        <th>Service Name</th>
+                                                        <th>service Price</th>
+                                                      
                                                         <th style="min-width: 100px">Action</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr v-for="reservation in filtersearch" :key="reservation.id">
+
+                                                        <tr v-for="service in filtersearch" :key="service.id">
                                                         
-                                                        
-                                                        <td>{{ reservation.name }}</td>
-                                                        <td>{{ reservation.full_name }}</td>
-                                                        <td>{{ reservation.phone }}</td>
-                                                        <td>{{ reservation.address }}</td>
-                                                        <td>{{ reservation.number }}</td>
-                                                        <td>{{ reservation.room_floor }}</td>
-                                                        <td>{{ reservation.check_in_date }}</td>
-                                                        <td>{{ reservation.check_out_date }}</td>
-                                                         <td>{{ reservation.status }}</td>
-                                                        <td>{{ reservation.room_price }}</td>
-                                                        <td>{{ reservation.pay_amount }}</td>
-                                                        <td>{{ reservation.due_amount }}</td>
-                                                       
-                                                    
+                                                        <td>{{ service.service_name }}</td>
+                                                        <td>{{ service.service_price }}</td>
+                                                      
                                                         
                                                         <td>
                                                             <div class="flex align-items-center list-user-action">
                                                                 
-                                                                <router-link class="btn btn-sm btn-icon btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" :to="{name : 'edit-room', params :{id:reservation.id} }">
+                                                                <router-link class="btn btn-sm btn-icon btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" :to="{name : 'edit-service', params :{id:service.id} }">
                                                                     <span class="btn-inner">
                                                                     <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                         <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -84,7 +61,7 @@
                                                                     </svg>
                                                                     </span>
                                                                 </router-link>
-                                                                <a class="btn btn-sm btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" @click="deleteRoom(reservation.id)">
+                                                                <a class="btn btn-sm btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" @click="deletecompany(service.id)">
                                                                     <span class="btn-inner">
                                                                     <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
                                                                         <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -123,27 +100,27 @@ export default {
     },
     data(){
         return{
-            reservations:[],
+            services:[],
             searchTerm :''
         }
 
     },computed: {
         filtersearch(){
-           return this.reservations.filter(reservation =>{
-              return reservation.check_in_date.match(this.searchTerm)
+           return this.services.filter(service =>{
+              return service.service_name.match(this.searchTerm)
             })
         }
 
     },
     methods:{
-        allRoom(){
-            axios.get('/api/reservation/')
+        allcompanys(){
+            axios.get('/api/service/')
             .then(({ data })=>{
-                this.reservations = data
+                this.services = data
             })
             .catch()
         },
-        deleteRoom(id){
+        deletecompany(id){
             Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -154,14 +131,14 @@ export default {
             confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
             if (result.value) {
-                axios.delete('/api/reservation/'+id)
+                axios.delete('/api/service/'+id)
                 .then(()=>{
-                    this.reservations =this.reservations.filter(reservation =>{
-                        return reservation.id != id;
+                    this.services =this.services.filter(service =>{
+                        return service.id != id;
                     })
                 })
                 .catch(()=>{
-                    this.$router.push({ name : 'reservation'})
+                    this.$router.push({ name : 'company'})
                 })
                 Swal.fire(
                 'Deleted!',
@@ -174,7 +151,7 @@ export default {
         }
     },
     mounted(){
-        this.allRoom();
+        this.allcompanys();
 
     }
     

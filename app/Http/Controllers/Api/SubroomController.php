@@ -97,4 +97,18 @@ class SubroomController extends Controller
             ->get();
         return response()->json($Specificroom);
     }
+
+    
+    public function GetservicesName()
+    {
+        $services=DB::table('service')->get();
+        return response()->json($services);
+    }
+    
+    public function Getselectedservicesprice()
+    {
+        $price_id = request('price_id');
+        $price=DB::table('service')->where('id',$price_id)->get();
+        return response()->json($price);
+    }
 }
