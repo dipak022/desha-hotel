@@ -42,7 +42,7 @@ class RoomCategoryController extends Controller
         $validated = $request->validate([
             'name' => 'required',
             'description' => 'required',
-            'price' => 'required',
+            
             
         ]);
         $data = array();

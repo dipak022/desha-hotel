@@ -50,6 +50,8 @@ Route::get('/subfloor', [App\Http\Controllers\Api\SubroomController::class, 'Get
 Route::get('/price', [App\Http\Controllers\Api\SubroomController::class, 'GetPrice']);
 
 
+Route::get('/getauditoriumfloorones', [App\Http\Controllers\Api\SubroomController::class, 'Getauditorium']);
+
 Route::get('/getroomfloorones', [App\Http\Controllers\Api\SubroomController::class, 'GetRoomsOne']);
 
 Route::get('/getroomfloortwos', [App\Http\Controllers\Api\SubroomController::class, 'GetRoomsTwo']);
@@ -66,6 +68,11 @@ Route::get('/get-room/{id}', [App\Http\Controllers\Api\SubroomController::class,
 Route::get('/serviceget', [App\Http\Controllers\Api\SubroomController::class, 'GetservicesName']);
 
 Route::get('/selectedservicesprice', [App\Http\Controllers\Api\SubroomController::class, 'Getselectedservicesprice']);
+
+
+
+Route::get('/reservationcustomer', [App\Http\Controllers\Api\SubroomController::class, 'reservationcustomers']);
+Route::post('/clear', [App\Http\Controllers\Api\SubroomController::class, 'reservationClear']);
 
 
 

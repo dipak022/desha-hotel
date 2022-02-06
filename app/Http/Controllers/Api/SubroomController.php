@@ -39,14 +39,25 @@ class SubroomController extends Controller
         return response()->json($roomcategory);
     }
 
+    public function Getauditorium()
+    {
+        $auditorium = DB::table("room")
+            ->where("floor",0)
+            //->where("room_status",0)
+            ->get();
+        return response()->json($auditorium);
+    }
     public function GetRoomsOne()
     {
         $room = DB::table("room")
             ->where("floor",1)
             //->where("room_status",0)
             ->get();
+            
         return response()->json($room);
     }
+
+    
 
     public function GetRoomsTwo()
     {
@@ -89,12 +100,38 @@ class SubroomController extends Controller
     {
         //$Specificroom =DB::table('room')->where('id',$id)->first();
         
+        
 
         $Specificroom = DB::table('room')
-            ->join('roomcategory','room.room_cat_id','roomcategory.id')
-            ->where('room.id',$id)
-            ->select('roomcategory.name','room.*')
-            ->get();
+            ->where('id',$id)
+            ->first();
+
+            if($Specificroom->room_status==1){
+                $reservation = DB::table('reservation')
+                    ->join('customer','reservation.customers_id','customer.id')
+                    ->join('room','reservation.rooms_id','room.id')
+                    ->join('roomCategory','reservation.room_categ_id','roomCategory.id')
+                    ->where('room.id',$id)
+                    ->select('customer.full_name','customer.phone','customer.address','room.number','roomCategory.name','reservation.*')
+                    ->orderBy('reservation.id','DESC')
+                    ->get();
+                    return response()->json($reservation);
+
+            }else{
+                $Specificroom = DB::table('room')
+                    ->join('roomcategory','room.room_cat_id','roomcategory.id')
+                    ->where('room.id',$id)
+                    ->select('roomcategory.name','room.*')
+                    ->get();
+
+            }
+
+            
+
+
+        
+
+            
         return response()->json($Specificroom);
     }
 
@@ -110,5 +147,24 @@ class SubroomController extends Controller
         $price_id = request('price_id');
         $price=DB::table('service')->where('id',$price_id)->get();
         return response()->json($price);
+    }
+
+
+    public function reservationcustomers(){
+        $reservation = DB::table('reservation')
+        ->join('customer','reservation.customers_id','customer.id')
+        ->join('room','reservation.rooms_id','room.id')
+        ->join('roomCategory','reservation.room_categ_id','roomCategory.id')
+        ->select('customer.full_name','customer.phone','customer.address','room.number','roomCategory.name','reservation.*')
+        ->orderBy('reservation.id','DESC')
+        ->get();
+        return response()->json($reservation);
+    }
+
+    public function reservationClear(Request $request){
+        $roomNumbe=$request->checkoutroomnumber;
+        //return response()->json($roomNumbe);
+        DB::table('room')->where('id',$roomNumbe)->update(['room_status'=> 0]);
+
     }
 }

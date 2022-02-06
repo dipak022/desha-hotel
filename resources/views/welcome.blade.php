@@ -62,9 +62,9 @@
 
   <div class="container-fluid" >
   <div class="row">
-  <nav  class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">
+  <nav  class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" >
         <div class="position-sticky pt-3">
-          <ul class="nav flex-column">
+          <ul class="nav flex-column" id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">
             <li class="nav-item">
               <router-link class="nav-link active" aria-current="page" to="/home">
                 <span data-feather="home"></span>
@@ -313,16 +313,16 @@
           </ul>
 
           <!-- reports start -->
-          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>Reports</span>
+          <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted" >
+            <span id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">Reports</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
-          <ul class="nav flex-column mb-2">
+          <ul class="nav flex-column mb-2" id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">
             <li class="nav-item">
               <a class="nav-link" href="#">
-                <span data-feather="bar-chart-2"></span>
+                <span data-feather="bar-chart-2" ></span>
                 Account Report
               </a>
             </li>
@@ -347,12 +347,12 @@
           </ul>
           <!-- reports end -->
           <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
-            <span>House Keeping</span>
+            <span id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">House Keeping</span>
             <a class="link-secondary" href="#" aria-label="Add a new report">
               <span data-feather="plus-circle"></span>
             </a>
           </h6>
-          <ul class="nav flex-column mb-2">
+          <ul class="nav flex-column mb-2" id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">
             <li class="nav-item">
               <a class="nav-link" href="#">
                 <span data-feather="user"></span>

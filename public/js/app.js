@@ -4100,11 +4100,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
@@ -4127,11 +4212,11 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/customer/').then(function (_ref) {
+    axios.get("/api/customer/").then(function (_ref) {
       var data = _ref.data;
       return _this.customers = data;
     });
-    axios.get('/api/halltype/').then(function (_ref2) {
+    axios.get("/api/halltype/").then(function (_ref2) {
       var data = _ref2.data;
       return _this.halltypes = data;
     });
@@ -4140,14 +4225,14 @@ __webpack_require__.r(__webpack_exports__);
     customerInsert: function customerInsert() {
       var _this2 = this;
 
-      axios.post('/api/hallreservation/', this.form).then(function () {
+      axios.post("/api/hallreservation/", this.form).then(function () {
         Toast.fire({
-          icon: 'success',
-          title: 'Hallreservation Added successfully'
+          icon: "success",
+          title: "Hallreservation Added successfully"
         });
 
         _this2.$router.push({
-          name: 'hallreservation'
+          name: "hallreservation"
         });
       })["catch"](function (error) {
         return _this2.errors = error.response.data.errors;
@@ -5920,11 +6005,562 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
@@ -5955,102 +6591,123 @@ __webpack_require__.r(__webpack_exports__);
       roomFours: {},
       roomFives: {},
       allrooms: {},
-      //BOOKING 
+      //BOOKING
       errors: {},
       customers: {},
+      reservationcustomers: {},
       rooms: {},
       floors: {},
       prices: {},
       roomcategories: {},
       customertypes: {},
-      selectedPrice: '',
+      selectedPrice: "",
       //start reservation date
-      check_in_date: '',
-      check_out_date: '',
-      check_in_time: '',
-      check_out_time: '',
-      number_of_adult: '',
-      customerid: '',
-      selectedClass: '',
-      room_cag_id: '',
-      room_floor_id: '',
-      room_prices: '',
-      pay_amount: '',
-      due_amount: '',
+      check_in_date: "",
+      check_out_date: "",
+      check_in_time: "",
+      check_out_time: "",
+      number_of_adult: "",
+      customerid: "",
+      selectedClass: "",
+      room_cag_id: "",
+      room_floor_id: "",
+      room_prices: "",
+      pay_amount: "",
+      due_amount: "",
       // services
       getservices: {},
-      selectedServicesPrice: '',
+      selectedServicesPrice: "",
       getserviceprices: {},
-      get_service_price: '',
-      servicecustomerid: ''
+      get_service_price: "",
+      servicecustomerid: "",
+      // reservation update data here
+      selectcategoryroom: {},
+      selectroomnumber: {},
+      selectfloornumber: {},
+      selectprice: {},
+      //checkout
+      checkoutroomnumber: {},
+      //Getauditorium
+      getauditoriums: {}
     };
   },
   methods: {
-    allRoomForfloorOne: function allRoomForfloorOne() {
+    AllAuditorium: function AllAuditorium() {
       var _this = this;
 
-      axios.get('/api/getroomfloorones/').then(function (_ref) {
+      axios.get("/api/getauditoriumfloorones/").then(function (_ref) {
         var data = _ref.data;
-        _this.roomOnes = data;
+        _this.getauditoriums = data;
+      })["catch"]();
+    },
+    allRoomForfloorOne: function allRoomForfloorOne() {
+      var _this2 = this;
+
+      axios.get("/api/getroomfloorones/").then(function (_ref2) {
+        var data = _ref2.data;
+        _this2.roomOnes = data;
       })["catch"]();
     },
     allRoomForfloorTwo: function allRoomForfloorTwo() {
-      var _this2 = this;
+      var _this3 = this;
 
-      axios.get('/api/getroomfloortwos/').then(function (_ref2) {
-        var data = _ref2.data;
-        _this2.roomTwos = data;
+      axios.get("/api/getroomfloortwos/").then(function (_ref3) {
+        var data = _ref3.data;
+        _this3.roomTwos = data;
       })["catch"]();
     },
     allRoomForfloorThree: function allRoomForfloorThree() {
-      var _this3 = this;
+      var _this4 = this;
 
-      axios.get('/api/getroomfloorthrees/').then(function (_ref3) {
-        var data = _ref3.data;
-        _this3.roomThrees = data;
+      axios.get("/api/getroomfloorthrees/").then(function (_ref4) {
+        var data = _ref4.data;
+        _this4.roomThrees = data;
       })["catch"]();
     },
     allRoomForfloorFour: function allRoomForfloorFour() {
-      var _this4 = this;
+      var _this5 = this;
 
-      axios.get('/api/getroomfloorfours/').then(function (_ref4) {
-        var data = _ref4.data;
-        _this4.roomFours = data;
+      axios.get("/api/getroomfloorfours/").then(function (_ref5) {
+        var data = _ref5.data;
+        _this5.roomFours = data;
       })["catch"]();
     },
     allRoomForfloorFive: function allRoomForfloorFive() {
-      var _this5 = this;
+      var _this6 = this;
 
-      axios.get('/api/getroomfloorfives/').then(function (_ref5) {
-        var data = _ref5.data;
-        _this5.roomFives = data;
+      axios.get("/api/getroomfloorfives/").then(function (_ref6) {
+        var data = _ref6.data;
+        _this6.roomFives = data;
       })["catch"]();
     },
     GetRoom: function GetRoom(id) {
-      var _this6 = this;
+      var _this7 = this;
 
-      axios.get('/api/get-room/' + id).then(function (_ref6) {
-        var data = _ref6.data;
-        _this6.allrooms = data;
+      axios.get("/api/get-room/" + id).then(function (_ref7) {
+        var data = _ref7.data;
+        _this7.allrooms = data;
       })["catch"](); //console.log(id);
     },
     customerInsert: function customerInsert() {
-      var _this7 = this;
+      var _this8 = this;
 
-      axios.post('/api/customer/', this.form).then(function () {
-        Reload.$emit('afterAdd');
+      axios.post("/api/customer/", this.form).then(function () {
+        Reload.$emit("afterAdd");
         Toast.fire({
-          icon: 'success',
-          title: 'Customer Added successfully'
+          icon: "success",
+          title: "Customer Added successfully"
+        });
+        _this8.customers = _this8.customers.filter(function (customer) {
+          return customer.id != id;
         });
         var x = document.getElementById("customershow");
         x.style.display = "none";
       })["catch"](function (error) {
-        return _this7.errors = error.response.data.errors;
+        return _this8.errors = error.response.data.errors;
       });
     },
     ServiceInsert: function ServiceInsert() {
-      var _this8 = this;
+      var _this9 = this;
 
       var data = {
         servicecustomerid: this.servicecustomerid,
@@ -6059,18 +6716,18 @@ __webpack_require__.r(__webpack_exports__);
         get_service_price: this.get_service_price,
         service_total: this.service_total
       };
-      axios.post('/api/serviceprovider/', data).then(function () {
-        Reload.$emit('afterAdd');
+      axios.post("/api/serviceprovider/", data).then(function () {
+        Reload.$emit("afterAdd");
         Toast.fire({
-          icon: 'success',
-          title: 'service provider added successfully'
+          icon: "success",
+          title: "service provider added successfully"
         });
       })["catch"](function (error) {
-        return _this8.errors = error.response.data.errors;
+        return _this9.errors = error.response.data.errors;
       });
     },
     ReservationInsert: function ReservationInsert() {
-      var _this9 = this;
+      var _this10 = this;
 
       var data = {
         check_in_date: this.check_in_date,
@@ -6079,39 +6736,59 @@ __webpack_require__.r(__webpack_exports__);
         check_out_time: this.check_out_time,
         number_of_adult: this.number_of_adult,
         customerid: this.customerid,
-        selectedClass: this.selectedClass,
-        room_cag_id: this.room_cag_id,
-        room_floor_id: this.room_floor_id,
-        room_prices: this.room_prices,
+        //selectedClass: this.selectedClass,
+        //room_cag_id: this.room_cag_id,
+        //room_floor_id: this.room_floor_id,
+        //room_prices: this.room_prices,
+        selectcategoryroom: this.selectcategoryroom,
+        selectroomnumber: this.selectroomnumber,
+        selectfloornumber: this.selectfloornumber,
+        selectprice: this.selectprice,
         pay_amount: this.pay_amount,
         due_amount: this.due_amount
       };
-      axios.post('/api/reservation/', data).then(function () {
-        $('#closeModel').click();
-        Reload.$emit('afterAdd');
+      axios.post("/api/reservation/", data).then(function () {
+        //Reload.$emit("afterReservation");
+        var x = document.getElementById("floortin");
+        x.style.display = "none";
         Toast.fire({
-          icon: 'success',
-          title: 'reservation successfully'
+          icon: "success",
+          title: "reservation successfully"
         });
       })["catch"](function (error) {
-        return _this9.errors = error.response.data.errors;
+        return _this10.errors = error.response.data.errors;
+      });
+    },
+    ReservationClear: function ReservationClear() {
+      var _this11 = this;
+
+      var data = {
+        checkoutroomnumber: this.checkoutroomnumber
+      };
+      axios.post("/api/clear/", data).then(function () {
+        Toast.fire({
+          icon: "success",
+          title: "reservation Clear successfully"
+        });
+      })["catch"](function (error) {
+        return _this11.errors = error.response.data.errors;
       });
     },
     onFileSelect: function onFileSelect(event) {
-      var _this10 = this;
+      var _this12 = this;
 
       var file = event.target.files[0]; //console.log(file);
 
       if (file.size > 1045770) {
         Toast.fire({
-          icon: 'warning',
-          title: 'Image Less then 1 mb. '
+          icon: "warning",
+          title: "Image Less then 1 mb. "
         });
       } else {
         var reader = new FileReader();
 
         reader.onload = function (event) {
-          _this10.form.patho = event.target.result;
+          _this12.form.patho = event.target.result;
         };
 
         reader.readAsDataURL(file);
@@ -6151,78 +6828,118 @@ __webpack_require__.r(__webpack_exports__);
         x.style.display = "block";
       } else {
         x.style.display = "none";
+      } //axios
+      //  .post("/api/clear/", data)
+      //  .then(() => {
+      //    Toast.fire({
+      //     icon: "success",
+      //     title: "reservation Clear successfully",
+      //   });
+      // })
+      //.catch((error) => (this.errors = error.response.data.errors));
+
+    },
+    floortins: function floortins() {
+      var x = document.getElementById("floortin");
+
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
       }
     }
   },
   mounted: function mounted() {
-    var _this11 = this;
+    var _this13 = this;
 
+    this.AllAuditorium();
     this.allRoomForfloorOne();
     this.allRoomForfloorTwo();
     this.allRoomForfloorThree();
     this.allRoomForfloorFour();
     this.allRoomForfloorFive();
-    Reload.$on('afterAdd', function () {
-      _this11.allRoomForfloorOne();
+    Reload.$on("afterAdd", function () {
+      _this13.AllAuditorium();
 
-      _this11.allRoomForfloorTwo();
+      _this13.allRoomForfloorOne();
 
-      _this11.allRoomForfloorThree();
+      _this13.allRoomForfloorTwo();
 
-      _this11.allRoomForfloorFour();
+      _this13.allRoomForfloorThree();
 
-      _this11.allRoomForfloorFive();
+      _this13.allRoomForfloorFour();
 
-      _this11.GetRoom(id);
+      _this13.allRoomForfloorFive();
+
+      _this13.GetRoom(id);
     });
-    axios.get('/api/customer/').then(function (_ref7) {
-      var data = _ref7.data;
-      return _this11.customers = data;
+    Reload.$on("afterReservation", function () {
+      _this13.AllAuditorium();
+
+      _this13.allRoomForfloorOne();
+
+      _this13.allRoomForfloorTwo();
+
+      _this13.allRoomForfloorThree();
+
+      _this13.allRoomForfloorFour();
+
+      _this13.allRoomForfloorFive();
+
+      _this13.GetRoom(id);
     });
-    axios.get('/api/customer-type/').then(function (_ref8) {
+    axios.get("/api/customer/").then(function (_ref8) {
       var data = _ref8.data;
-      return _this11.customertypes = data;
+      return _this13.customers = data;
     });
-    axios.get('/api/roomcategory').then(function (_ref9) {
+    axios.get("/api/reservationcustomer/").then(function (_ref9) {
       var data = _ref9.data;
-      return _this11.roomcategories = data;
+      return _this13.reservationcustomers = data;
     });
-    axios.get('/api/serviceget').then(function (_ref10) {
+    axios.get("/api/customer-type/").then(function (_ref10) {
       var data = _ref10.data;
-      return _this11.getservices = data;
+      return _this13.customertypes = data;
+    });
+    axios.get("/api/roomcategory").then(function (_ref11) {
+      var data = _ref11.data;
+      return _this13.roomcategories = data;
+    });
+    axios.get("/api/serviceget").then(function (_ref12) {
+      var data = _ref12.data;
+      return _this13.getservices = data;
     });
   },
   watch: {
     selectedClass: function selectedClass(value) {
-      var _this12 = this;
+      var _this14 = this;
 
-      axios.get('/api/subroom?room_id=' + this.selectedClass).then(function (_ref11) {
-        var data = _ref11.data;
-        return _this12.rooms = data;
+      axios.get("/api/subroom?room_id=" + this.selectedClass).then(function (_ref13) {
+        var data = _ref13.data;
+        return _this14.rooms = data;
       });
     },
     room_cag_id: function room_cag_id(value) {
-      var _this13 = this;
+      var _this15 = this;
 
-      axios.get('/api/subfloor?floor_id=' + this.room_cag_id).then(function (_ref12) {
-        var data = _ref12.data;
-        return _this13.floors = data;
+      axios.get("/api/subfloor?floor_id=" + this.room_cag_id).then(function (_ref14) {
+        var data = _ref14.data;
+        return _this15.floors = data;
       });
     },
     room_floor_id: function room_floor_id(value) {
-      var _this14 = this;
+      var _this16 = this;
 
-      axios.get('/api/price?price_id=' + this.room_floor_id).then(function (_ref13) {
-        var data = _ref13.data;
-        return _this14.prices = data;
+      axios.get("/api/price?price_id=" + this.room_floor_id).then(function (_ref15) {
+        var data = _ref15.data;
+        return _this16.prices = data;
       });
     },
     selectedServicesPrice: function selectedServicesPrice(value) {
-      var _this15 = this;
+      var _this17 = this;
 
-      axios.get('/api/selectedservicesprice?price_id=' + this.selectedServicesPrice).then(function (_ref14) {
-        var data = _ref14.data;
-        return _this15.getserviceprices = data;
+      axios.get("/api/selectedservicesprice?price_id=" + this.selectedServicesPrice).then(function (_ref16) {
+        var data = _ref16.data;
+        return _this17.getserviceprices = data;
       });
     }
   }
@@ -7220,11 +7937,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
@@ -7247,7 +8023,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    axios.get('/api/room-category/').then(function (_ref) {
+    axios.get("/api/room-category/").then(function (_ref) {
       var data = _ref.data;
       return _this.roomcategories = data;
     });
@@ -7256,14 +8032,14 @@ __webpack_require__.r(__webpack_exports__);
     customerInsert: function customerInsert() {
       var _this2 = this;
 
-      axios.post('/api/room/', this.form).then(function () {
+      axios.post("/api/room/", this.form).then(function () {
         Toast.fire({
-          icon: 'success',
-          title: 'Room Added successfully'
+          icon: "success",
+          title: "Room Added successfully"
         });
 
         _this2.$router.push({
-          name: 'room'
+          name: "room"
         });
       })["catch"](function (error) {
         return _this2.errors = error.response.data.errors;
@@ -7371,11 +8147,72 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
@@ -7398,11 +8235,11 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     var id = this.$route.params.id;
-    axios.get('/api/room/' + id).then(function (_ref) {
+    axios.get("/api/room/" + id).then(function (_ref) {
       var data = _ref.data;
       return _this.form = data;
     })["catch"]();
-    axios.get('/api/room-category/').then(function (_ref2) {
+    axios.get("/api/room-category/").then(function (_ref2) {
       var data = _ref2.data;
       return _this.roomcategories = data;
     });
@@ -7412,14 +8249,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var id = this.$route.params.id;
-      axios.patch('/api/room/' + id, this.form).then(function () {
+      axios.patch("/api/room/" + id, this.form).then(function () {
         Toast.fire({
-          icon: 'success',
-          title: 'Update  in successfully'
+          icon: "success",
+          title: "Update  in successfully"
         });
 
         _this2.$router.push({
-          name: 'room'
+          name: "room"
         });
       })["catch"](function (error) {
         return _this2.errors = error.response.data.errors;
@@ -7432,8 +8269,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (file.size > 1045770) {
         Toast.fire({
-          icon: 'warning',
-          title: 'Image Less then 1 mb. '
+          icon: "warning",
+          title: "Image Less then 1 mb. "
         });
       } else {
         var reader = new FileReader();
@@ -8964,11 +9801,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   created: function created() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
@@ -8986,10 +9845,10 @@ __webpack_require__.r(__webpack_exports__);
     roomCategoryInsert: function roomCategoryInsert() {
       var _this = this;
 
-      axios.post('/api/room-category/', this.form).then(function () {
+      axios.post("/api/room-category/", this.form).then(function () {
         Toast.fire({
-          icon: 'success',
-          title: 'Room category save successfully'
+          icon: "success",
+          title: "Room category save successfully"
         }); //this.$router.push({ name : 'customer'})
       })["catch"](function (error) {
         return _this.errors = error.response.data.errors;
@@ -9077,11 +9936,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   mounted: function mounted() {
     if (!User.loggedIn()) {
       this.$router.push({
-        name: '/'
+        name: "/"
       });
     }
   },
@@ -9099,7 +9980,7 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     var id = this.$route.params.id;
-    axios.get('/api/room-category/' + id).then(function (_ref) {
+    axios.get("/api/room-category/" + id).then(function (_ref) {
       var data = _ref.data;
       return _this.form = data;
     })["catch"]();
@@ -9109,14 +9990,14 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       var id = this.$route.params.id;
-      axios.patch('/api/room-category/' + id, this.form).then(function () {
+      axios.patch("/api/room-category/" + id, this.form).then(function () {
         Toast.fire({
-          icon: 'success',
-          title: 'Room Category Update successfully'
+          icon: "success",
+          title: "Room Category Update successfully"
         });
 
         _this2.$router.push({
-          name: 'room-category'
+          name: "room-category"
         });
       })["catch"](function (error) {
         return _this2.errors = error.response.data.errors;
@@ -42040,9 +42921,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-plus" }),
-                        _vm._v(
-                          "All HallReservation\r\n                                    "
-                        )
+                        _vm._v("All HallReservation\n              ")
                       ]
                     )
                   ],
@@ -42058,7 +42937,7 @@ var render = function() {
         _c("div", { staticClass: "col-lg-12" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "card  " }, [
+              _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "div",
@@ -42123,14 +43002,27 @@ var render = function() {
                                 _c(
                                   "option",
                                   { attrs: { selected: "", disabled: "" } },
-                                  [_vm._v("Select Customer Name")]
+                                  [
+                                    _vm._v(
+                                      "\n                          Select Customer Name\n                        "
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
-                                _vm._l(_vm.customers, function(customer) {
+                                _vm._l(_vm.customers, function(custome) {
                                   return _c(
                                     "option",
-                                    { domProps: { value: customer.id } },
-                                    [_vm._v(_vm._s(customer.name))]
+                                    {
+                                      staticStyle: { "text-color": "#000" },
+                                      domProps: { value: custome.id }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                          " +
+                                          _vm._s(custome.name) +
+                                          "\n                        "
+                                      )
+                                    ]
                                   )
                                 })
                               ],
@@ -42191,14 +43083,24 @@ var render = function() {
                                 _c(
                                   "option",
                                   { attrs: { selected: "", disabled: "" } },
-                                  [_vm._v("Select Category Rome")]
+                                  [
+                                    _vm._v(
+                                      "\n                          Select Category Rome\n                        "
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
                                 _vm._l(_vm.halltypes, function(halltype) {
                                   return _c(
                                     "option",
                                     { domProps: { value: halltype.id } },
-                                    [_vm._v(_vm._s(halltype.hall_name))]
+                                    [
+                                      _vm._v(
+                                        "\n                          " +
+                                          _vm._s(halltype.hall_name) +
+                                          "\n                        "
+                                      )
+                                    ]
                                   )
                                 })
                               ],
@@ -42413,7 +43315,11 @@ var render = function() {
                                 staticClass: "form-label",
                                 attrs: { for: "exampleInputText1" }
                               },
-                              [_vm._v("Select Reservation Time ")]
+                              [
+                                _vm._v(
+                                  "Select Reservation Time\n                      "
+                                )
+                              ]
                             ),
                             _vm._v(" "),
                             _c(
@@ -42457,43 +43363,43 @@ var render = function() {
                                 ),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "1" } }, [
-                                  _vm._v("1 ")
+                                  _vm._v("1")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "2" } }, [
-                                  _vm._v("2 ")
+                                  _vm._v("2")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "3" } }, [
-                                  _vm._v("3 ")
+                                  _vm._v("3")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "4" } }, [
-                                  _vm._v("4 ")
+                                  _vm._v("4")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "5" } }, [
-                                  _vm._v("5 ")
+                                  _vm._v("5")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "6" } }, [
-                                  _vm._v("6 ")
+                                  _vm._v("6")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "7" } }, [
-                                  _vm._v("7 ")
+                                  _vm._v("7")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "8" } }, [
-                                  _vm._v("8 ")
+                                  _vm._v("8")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "9" } }, [
-                                  _vm._v("9 ")
+                                  _vm._v("9")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "10" } }, [
-                                  _vm._v("10 ")
+                                  _vm._v("10")
                                 ]),
                                 _vm._v(" "),
                                 _c("option", { attrs: { value: "11" } }, [
@@ -42520,7 +43426,7 @@ var render = function() {
                                 staticClass: "form-label",
                                 attrs: { for: "exampleInputEmail3" }
                               },
-                              [_vm._v("Total Amount ")]
+                              [_vm._v("Total Amount\n                      ")]
                             ),
                             _vm._v(" "),
                             _c("input", {
@@ -42567,7 +43473,7 @@ var render = function() {
                                 staticClass: "form-label",
                                 attrs: { for: "exampleInputEmail3" }
                               },
-                              [_vm._v("Total Guest ")]
+                              [_vm._v("Total Guest\n                      ")]
                             ),
                             _vm._v(" "),
                             _c("input", {
@@ -42615,7 +43521,11 @@ var render = function() {
                               staticClass: "btn btn-primary",
                               attrs: { type: "submit" }
                             },
-                            [_vm._v("Submit")]
+                            [
+                              _vm._v(
+                                "\n                      Submit\n                    "
+                              )
+                            ]
                           )
                         ]
                       )
@@ -45644,7 +46554,62 @@ var render = function() {
   return _c("main", { staticClass: "col-md-9 ms-sm-auto col-lg-10 px-md-4" }, [
     _vm._m(0),
     _vm._v(" "),
-    _vm._m(1),
+    _c("section", [
+      _c("h1", { staticClass: "text-center text-muted my-3" }, [
+        _vm._v("\n      Room Check In And Check Out Informatuins\n    ")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        {
+          attrs: {
+            "data-bs-toggle": "modal",
+            "data-bs-target": "#exampleModal"
+          }
+        },
+        [
+          _c("div", { staticClass: "row my-5" }, [
+            _c("div", { staticClass: "col-md-8 col-sm-12 m-auto" }, [
+              _c(
+                "div",
+                { staticClass: "card profile-card my-8" },
+                _vm._l(_vm.getauditoriums, function(Getauditorium) {
+                  return _c(
+                    "div",
+                    {
+                      key: Getauditorium.id,
+                      staticClass: "card-body profile-card-info",
+                      on: {
+                        click: function($event) {
+                          return _vm.GetRoom(Getauditorium.id)
+                        }
+                      }
+                    },
+                    [
+                      _c("span", {
+                        staticClass: "my-3 profile-card-info-icon",
+                        attrs: { "data-feather": "user-x" }
+                      }),
+                      _vm._v(" "),
+                      _c("img", { attrs: { src: "backend/img/bed-icon.png" } }),
+                      _vm._v(" "),
+                      Getauditorium.number
+                        ? _c("h5", { staticClass: "card-title" }, [
+                            _vm._v(
+                              "\n                Auditorium\n              "
+                            )
+                          ])
+                        : _vm._e()
+                    ]
+                  )
+                }),
+                0
+              )
+            ])
+          ])
+        ]
+      )
+    ]),
     _vm._v(" "),
     _c("section", [
       _c("h1", { staticClass: "text-center text-muted my-3" }, [
@@ -45659,7 +46624,7 @@ var render = function() {
             "div",
             {
               key: roomone.id,
-              staticClass: " col-md-2 col-sm-12",
+              staticClass: "col-md-2 col-sm-12",
               on: {
                 click: function($event) {
                   return _vm.GetRoom(roomone.id)
@@ -45677,22 +46642,60 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-body profile-card-info",
-                      staticStyle: { "background-color": "#059862" }
-                    },
-                    [
-                      _c("img", { attrs: { src: "backend/img/bed.png" } }),
-                      _vm._v(" "),
-                      _c(
-                        "h6",
-                        { staticClass: "card-subtitle mb-2 text-muted my-3" },
-                        [_vm._v(_vm._s(roomone.number))]
+                  roomone.room_status == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "card-body profile-card-info" },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomone.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
                       )
-                    ]
-                  )
+                    : _vm._e(),
+                  _vm._v(" "),
+                  roomone.room_status == 1
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "card-body profile-card-info",
+                          staticStyle: { "background-color": "#059862" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomone.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
                 ]
               )
             ]
@@ -45719,7 +46722,7 @@ var render = function() {
             "div",
             { staticClass: "modal-content" },
             [
-              _vm._m(2),
+              _vm._m(1),
               _vm._v(" "),
               _c("div", { staticClass: "card-body" }, [
                 _c(
@@ -45735,57 +46738,86 @@ var render = function() {
                             "div",
                             { key: allroom.id, staticClass: "container" },
                             [
-                              _c(
-                                "h4",
-                                { staticStyle: { "text-align": "center" } },
-                                [_vm._v("Room Information")]
-                              ),
+                              allroom.room_status == 0
+                                ? _c(
+                                    "h4",
+                                    { staticStyle: { "text-align": "center" } },
+                                    [
+                                      _vm._v(
+                                        "\n                    Room Information\n                  "
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
                               _vm._v(" "),
                               _c("br"),
                               _vm._v(" "),
-                              _c("ul", { staticClass: "list-group" }, [
-                                _c("li", { staticClass: "list-group-item" }, [
-                                  _vm._v("Room No :"),
-                                  _c(
-                                    "span",
-                                    { staticStyle: { "margin-left": "120px" } },
-                                    [_vm._v(_vm._s(allroom.number))]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "list-group-item" }, [
-                                  _vm._v("Category: "),
-                                  _c(
-                                    "span",
-                                    { staticStyle: { "margin-left": "125px" } },
-                                    [_vm._v(_vm._s(allroom.name))]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "list-group-item" }, [
-                                  _vm._v("Details : "),
-                                  _c(
-                                    "span",
-                                    { staticStyle: { "margin-left": "130px" } },
-                                    [_vm._v(_vm._s(allroom.description))]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                _c("li", { staticClass: "list-group-item" }, [
-                                  _vm._v("Price   : "),
-                                  _c(
-                                    "span",
-                                    { staticStyle: { "margin-left": "135px" } },
-                                    [_vm._v(_vm._s(allroom.room_price))]
-                                  )
-                                ]),
-                                _vm._v(" "),
-                                allroom.room_status == 0
-                                  ? _c(
+                              allroom.room_status == 0
+                                ? _c("ul", { staticClass: "list-group" }, [
+                                    _c(
                                       "li",
                                       { staticClass: "list-group-item" },
                                       [
-                                        _vm._v("Status   : "),
+                                        _vm._v(
+                                          "\n                      Room No :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [_vm._v(_vm._s(allroom.number))]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Category:\n                      "
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "125px"
+                                            }
+                                          },
+                                          [_vm._v(_vm._s(allroom.name))]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Details :\n                      "
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "130px"
+                                            }
+                                          },
+                                          [_vm._v(_vm._s(allroom.description))]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Price :\n                      "
+                                        ),
                                         _c(
                                           "span",
                                           {
@@ -45793,31 +46825,288 @@ var render = function() {
                                               "margin-left": "135px"
                                             }
                                           },
-                                          [_vm._v("Available")]
+                                          [_vm._v(_vm._s(allroom.room_price))]
                                         )
                                       ]
-                                    )
-                                  : _vm._e(),
-                                _vm._v(" "),
-                                allroom.room_status > 0
-                                  ? _c(
+                                    ),
+                                    _vm._v(" "),
+                                    allroom.room_status == 0
+                                      ? _c(
+                                          "li",
+                                          { staticClass: "list-group-item" },
+                                          [
+                                            _vm._v(
+                                              "\n                      Status :\n                      "
+                                            ),
+                                            _c(
+                                              "span",
+                                              {
+                                                staticStyle: {
+                                                  "margin-left": "135px"
+                                                }
+                                              },
+                                              [_vm._v("Available")]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e(),
+                                    _vm._v(" "),
+                                    allroom.room_status > 0
+                                      ? _c(
+                                          "li",
+                                          { staticClass: "list-group-item" },
+                                          [
+                                            _vm._v(
+                                              "\n                      Status : "
+                                            ),
+                                            _c(
+                                              "span",
+                                              {
+                                                staticStyle: {
+                                                  "margin-left": "135px"
+                                                }
+                                              },
+                                              [_vm._v("Booking")]
+                                            )
+                                          ]
+                                        )
+                                      : _vm._e()
+                                  ])
+                                : _vm._e(),
+                              _vm._v(" "),
+                              allroom.status == 0
+                                ? _c(
+                                    "h4",
+                                    { staticStyle: { "text-align": "center" } },
+                                    [
+                                      _vm._v(
+                                        "\n                    Reservation Information\n                  "
+                                      )
+                                    ]
+                                  )
+                                : _vm._e(),
+                              _vm._v(" "),
+                              _c("br"),
+                              _vm._v(" "),
+                              allroom.status == 0
+                                ? _c("ul", { staticClass: "list-group" }, [
+                                    _c(
                                       "li",
                                       { staticClass: "list-group-item" },
                                       [
-                                        _vm._v("Status   : "),
+                                        _vm._v(
+                                          "\n                      Room No :"
+                                        ),
                                         _c(
                                           "span",
                                           {
                                             staticStyle: {
-                                              "margin-left": "135px"
+                                              "margin-left": "120px"
                                             }
                                           },
-                                          [_vm._v("Booking")]
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.number) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      check in date :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.check_in_date) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      check in Time :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.check_in_time) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      check out date :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.check_out_date) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      check out Time :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.check_out_time) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Customer name :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.full_name) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Room Price :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.room_price) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Pay Amount :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.pay_amount) +
+                                                "\n                      "
+                                            )
+                                          ]
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "li",
+                                      { staticClass: "list-group-item" },
+                                      [
+                                        _vm._v(
+                                          "\n                      Due Amount :"
+                                        ),
+                                        _c(
+                                          "span",
+                                          {
+                                            staticStyle: {
+                                              "margin-left": "120px"
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              _vm._s(allroom.due_amount) +
+                                                "\n                      "
+                                            )
+                                          ]
                                         )
                                       ]
                                     )
-                                  : _vm._e()
-                              ])
+                                  ])
+                                : _vm._e()
                             ]
                           )
                         }),
@@ -45840,7 +47129,7 @@ var render = function() {
                                 "card-body d-flex justify-content-between align-items-center"
                             },
                             [
-                              _vm._m(3, true),
+                              _vm._m(2, true),
                               _vm._v(" "),
                               _c("div", { staticClass: "card-action" }, [
                                 _c(
@@ -45852,7 +47141,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\r\n                                            Create Customer \r\n                                        "
+                                      "\n                    Create Customer\n                  "
                                     )
                                   ]
                                 )
@@ -45871,7 +47160,7 @@ var render = function() {
                                 "card-body d-flex justify-content-between align-items-center"
                             },
                             [
-                              _vm._m(4, true),
+                              _vm._m(3, true),
                               _vm._v(" "),
                               _c("div", { staticClass: "card-action" }, [
                                 _c(
@@ -45884,7 +47173,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\r\n                                            New Reservation \r\n                                        "
+                                      "\n                    New Reservation\n                  "
                                     )
                                   ]
                                 )
@@ -45898,7 +47187,7 @@ var render = function() {
               }),
               _vm._v(" "),
               _vm._l(_vm.allrooms, function(allro) {
-                return allro.room_status > 0
+                return allro.status == 0
                   ? _c("div", { key: allro.id, staticClass: "row" }, [
                       _c("div", { staticClass: "col-lg-4 col-md-4" }, [
                         _c("div", { staticClass: "card" }, [
@@ -45921,7 +47210,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\r\n                                            Add Service \r\n                                        "
+                                      "\n                    Add Service\n                  "
                                     )
                                   ]
                                 )
@@ -45954,7 +47243,7 @@ var render = function() {
                                   },
                                   [
                                     _vm._v(
-                                      "\r\n                                            Checkout \r\n                                        "
+                                      "\n                    Checkout\n                  "
                                     )
                                   ]
                                 )
@@ -45966,6 +47255,126 @@ var render = function() {
                     ])
                   : _vm._e()
               }),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticStyle: { display: "none", padding: "5px" },
+                  attrs: { id: "checkoutshow" }
+                },
+                [
+                  _c(
+                    "form",
+                    {
+                      attrs: { enctype: "multipart/form-data" },
+                      on: {
+                        submit: function($event) {
+                          $event.preventDefault()
+                          return _vm.ReservationClear.apply(null, arguments)
+                        }
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "row" }, [
+                        _c("div", { staticClass: "col-md-12" }, [
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "form-label",
+                                  attrs: { for: "exampleInputText1" }
+                                },
+                                [_vm._v("Select Rome Number")]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.allrooms, function(allroom) {
+                                return _c("p", [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.checkoutroomnumber,
+                                          expression: "checkoutroomnumber"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.checkoutroomnumber = $event.target
+                                            .multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        {
+                                          attrs: { selected: "", disabled: "" }
+                                        },
+                                        [_vm._v("Select Rome Number")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "option",
+                                        {
+                                          staticStyle: { color: "black" },
+                                          domProps: { value: allroom.rooms_id }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                        " +
+                                              _vm._s(allroom.number) +
+                                              "\n                      "
+                                          )
+                                        ]
+                                      )
+                                    ]
+                                  )
+                                ])
+                              }),
+                              _vm._v(" "),
+                              _vm.errors.checkoutroomnumber
+                                ? _c("small", { staticClass: "text-danger" }, [
+                                    _vm._v(
+                                      _vm._s(_vm.errors.checkoutroomnumber[0])
+                                    )
+                                  ])
+                                : _vm._e()
+                            ],
+                            2
+                          )
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("br"),
+                      _vm._v(" "),
+                      _vm._m(4)
+                    ]
+                  )
+                ]
+              ),
               _vm._v(" "),
               _c(
                 "div",
@@ -46226,7 +47635,7 @@ var render = function() {
                                 staticClass: "form-label",
                                 attrs: { for: "exampleInputText1" }
                               },
-                              [_vm._v(" Number Of Adult")]
+                              [_vm._v("\n                    Number Of Adult")]
                             ),
                             _vm._v(" "),
                             _c("input", {
@@ -46317,7 +47726,13 @@ var render = function() {
                                       staticStyle: { color: "black" },
                                       domProps: { value: customer.id }
                                     },
-                                    [_vm._v(_vm._s(customer.full_name))]
+                                    [
+                                      _vm._v(
+                                        "\n                      " +
+                                          _vm._s(customer.full_name) +
+                                          "\n                    "
+                                      )
+                                    ]
                                   )
                                 })
                               ],
@@ -46342,7 +47757,7 @@ var render = function() {
                                 staticClass: "form-label",
                                 attrs: { for: "exampleInputText1" }
                               },
-                              [_vm._v("Select Category Rome")]
+                              [_vm._v("Select Category Room")]
                             ),
                             _vm._v(" "),
                             _c(
@@ -46352,8 +47767,8 @@ var render = function() {
                                   {
                                     name: "model",
                                     rawName: "v-model",
-                                    value: _vm.selectedClass,
-                                    expression: "selectedClass"
+                                    value: _vm.selectcategoryroom,
+                                    expression: "selectcategoryroom"
                                   }
                                 ],
                                 staticClass: "form-control",
@@ -46368,7 +47783,8 @@ var render = function() {
                                           "_value" in o ? o._value : o.value
                                         return val
                                       })
-                                    _vm.selectedClass = $event.target.multiple
+                                    _vm.selectcategoryroom = $event.target
+                                      .multiple
                                       ? $$selectedVal
                                       : $$selectedVal[0]
                                   }
@@ -46378,20 +47794,21 @@ var render = function() {
                                 _c(
                                   "option",
                                   { attrs: { selected: "", disabled: "" } },
-                                  [_vm._v("Select Category Rome")]
+                                  [_vm._v("Select Category Room")]
                                 ),
                                 _vm._v(" "),
-                                _vm._l(_vm.roomcategories, function(item) {
+                                _vm._l(_vm.allrooms, function(allroom) {
                                   return _c(
                                     "option",
                                     {
-                                      key: item.id,
-                                      domProps: { value: item.id }
+                                      staticStyle: { color: "black" },
+                                      domProps: { value: allroom.room_cat_id }
                                     },
                                     [
                                       _vm._v(
-                                        _vm._s(item.name) +
-                                          "\r\n                                                \r\n                                                    "
+                                        "\n                      " +
+                                          _vm._s(allroom.name) +
+                                          "\n                    "
                                       )
                                     ]
                                   )
@@ -46400,215 +47817,308 @@ var render = function() {
                               2
                             ),
                             _vm._v(" "),
-                            _vm.errors.selectedClass
+                            _vm.errors.selectcategoryroom
                               ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.selectedClass[0]))
+                                  _vm._v(
+                                    _vm._s(_vm.errors.selectcategoryroom[0])
+                                  )
                                 ])
                               : _vm._e()
                           ])
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "col-md-6" }, [
-                          _c("div", { staticClass: "form-group" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-label",
-                                attrs: { for: "exampleInputText1" }
-                              },
-                              [_vm._v("Select Rome Number")]
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "select",
-                              {
-                                directives: [
-                                  {
-                                    name: "model",
-                                    rawName: "v-model",
-                                    value: _vm.room_cag_id,
-                                    expression: "room_cag_id"
-                                  }
-                                ],
-                                staticClass: "form-control",
-                                on: {
-                                  change: function($event) {
-                                    var $$selectedVal = Array.prototype.filter
-                                      .call($event.target.options, function(o) {
-                                        return o.selected
-                                      })
-                                      .map(function(o) {
-                                        var val =
-                                          "_value" in o ? o._value : o.value
-                                        return val
-                                      })
-                                    _vm.room_cag_id = $event.target.multiple
-                                      ? $$selectedVal
-                                      : $$selectedVal[0]
-                                  }
-                                }
-                              },
-                              [
-                                _c(
-                                  "option",
-                                  { attrs: { selected: "", disabled: "" } },
-                                  [_vm._v("Select Rome Number")]
-                                ),
-                                _vm._v(" "),
-                                _vm._l(_vm.rooms, function(room) {
-                                  return _c(
-                                    "option",
-                                    { domProps: { value: room.id } },
-                                    [_vm._v(_vm._s(room.number))]
+                          _c(
+                            "div",
+                            { staticClass: "form-group" },
+                            [
+                              _c(
+                                "label",
+                                {
+                                  staticClass: "form-label",
+                                  attrs: { for: "exampleInputText1" }
+                                },
+                                [_vm._v("Select Rome Number")]
+                              ),
+                              _vm._v(" "),
+                              _vm._l(_vm.allrooms, function(allroom) {
+                                return _c("p", [
+                                  _c(
+                                    "select",
+                                    {
+                                      directives: [
+                                        {
+                                          name: "model",
+                                          rawName: "v-model",
+                                          value: _vm.selectroomnumber,
+                                          expression: "selectroomnumber"
+                                        }
+                                      ],
+                                      staticClass: "form-control",
+                                      on: {
+                                        change: function($event) {
+                                          var $$selectedVal = Array.prototype.filter
+                                            .call(
+                                              $event.target.options,
+                                              function(o) {
+                                                return o.selected
+                                              }
+                                            )
+                                            .map(function(o) {
+                                              var val =
+                                                "_value" in o
+                                                  ? o._value
+                                                  : o.value
+                                              return val
+                                            })
+                                          _vm.selectroomnumber = $event.target
+                                            .multiple
+                                            ? $$selectedVal
+                                            : $$selectedVal[0]
+                                        }
+                                      }
+                                    },
+                                    [
+                                      _c(
+                                        "option",
+                                        {
+                                          attrs: { selected: "", disabled: "" }
+                                        },
+                                        [_vm._v("Select Rome Number")]
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "option",
+                                        {
+                                          staticStyle: { color: "black" },
+                                          domProps: { value: allroom.id }
+                                        },
+                                        [
+                                          _vm._v(
+                                            "\n                        " +
+                                              _vm._s(allroom.number) +
+                                              "\n                      "
+                                          )
+                                        ]
+                                      )
+                                    ]
                                   )
-                                })
-                              ],
-                              2
-                            ),
-                            _vm._v(" "),
-                            _vm.errors.room_cag_id
-                              ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.room_cag_id[0]))
                                 ])
-                              : _vm._e()
-                          ])
+                              }),
+                              _vm._v(" "),
+                              _vm.errors.selectroomnumber
+                                ? _c("small", { staticClass: "text-danger" }, [
+                                    _vm._v(
+                                      _vm._s(_vm.errors.selectroomnumber[0])
+                                    )
+                                  ])
+                                : _vm._e()
+                            ],
+                            2
+                          )
                         ])
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "form-group" }, [
                         _c("div", { staticClass: "row" }, [
                           _c("div", { staticClass: "col-md-6" }, [
-                            _c("div", { staticClass: "form-group" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "form-label",
-                                  attrs: { for: "exampleInputText1" }
-                                },
-                                [_vm._v("Select Floor")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.room_floor_id,
-                                      expression: "room_floor_id"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.room_floor_id = $event.target.multiple
-                                        ? $$selectedVal
-                                        : $$selectedVal[0]
-                                    }
-                                  }
-                                },
-                                [
-                                  _c(
-                                    "option",
-                                    { attrs: { selected: "", disabled: "" } },
-                                    [_vm._v("Select Floor")]
-                                  ),
-                                  _vm._v(" "),
-                                  _vm._l(_vm.floors, function(floor) {
-                                    return _c(
-                                      "option",
-                                      { domProps: { value: floor.floor } },
-                                      [_vm._v(_vm._s(floor.floor) + " Floor")]
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "form-label",
+                                    attrs: { for: "exampleInputText1" }
+                                  },
+                                  [_vm._v("Select Floor")]
+                                ),
+                                _vm._v(" "),
+                                _vm._l(_vm.allrooms, function(allroom) {
+                                  return _c("p", { key: allroom.id }, [
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.selectfloornumber,
+                                            expression: "selectfloornumber"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.selectfloornumber = $event
+                                              .target.multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              selected: "",
+                                              disabled: ""
+                                            }
+                                          },
+                                          [_vm._v("Select Floor")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            staticStyle: { color: "black" },
+                                            domProps: { value: allroom.floor }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                          " +
+                                                _vm._s(allroom.floor) +
+                                                "\n                        "
+                                            )
+                                          ]
+                                        )
+                                      ]
                                     )
-                                  })
-                                ],
-                                2
-                              ),
-                              _vm._v(" "),
-                              _vm.errors.room_floor_id
-                                ? _c("small", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.errors.room_floor_id[0]))
                                   ])
-                                : _vm._e()
-                            ])
+                                }),
+                                _vm._v(" "),
+                                _vm.errors.selectfloornumber
+                                  ? _c(
+                                      "small",
+                                      { staticClass: "text-danger" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.errors.selectfloornumber[0]
+                                          )
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ],
+                              2
+                            )
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "col-md-6" }, [
-                            _c("div", { staticClass: "form-group" }, [
-                              _c(
-                                "label",
-                                {
-                                  staticClass: "form-label",
-                                  attrs: { for: "exampleInputText1" }
-                                },
-                                [_vm._v("Price")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "select",
-                                {
-                                  directives: [
-                                    {
-                                      name: "model",
-                                      rawName: "v-model",
-                                      value: _vm.room_prices,
-                                      expression: "room_prices"
-                                    }
-                                  ],
-                                  staticClass: "form-control",
-                                  on: {
-                                    change: function($event) {
-                                      var $$selectedVal = Array.prototype.filter
-                                        .call($event.target.options, function(
-                                          o
-                                        ) {
-                                          return o.selected
-                                        })
-                                        .map(function(o) {
-                                          var val =
-                                            "_value" in o ? o._value : o.value
-                                          return val
-                                        })
-                                      _vm.room_prices = $event.target.multiple
-                                        ? $$selectedVal
-                                        : $$selectedVal[0]
-                                    }
-                                  }
-                                },
-                                [
-                                  _c("option", { attrs: { disabled: "" } }, [
-                                    _vm._v("Select Price")
-                                  ]),
-                                  _vm._v(" "),
-                                  _vm._l(_vm.floors, function(floor) {
-                                    return _c(
-                                      "option",
-                                      { domProps: { value: floor.room_price } },
-                                      [_vm._v(_vm._s(floor.room_price) + " TK")]
+                            _c(
+                              "div",
+                              { staticClass: "form-group" },
+                              [
+                                _c(
+                                  "label",
+                                  {
+                                    staticClass: "form-label",
+                                    attrs: { for: "exampleInputText1" }
+                                  },
+                                  [_vm._v("Price")]
+                                ),
+                                _vm._v(" "),
+                                _vm._l(_vm.allrooms, function(allroom) {
+                                  return _c("p", { key: allroom.id }, [
+                                    _c(
+                                      "select",
+                                      {
+                                        directives: [
+                                          {
+                                            name: "model",
+                                            rawName: "v-model",
+                                            value: _vm.selectprice,
+                                            expression: "selectprice"
+                                          }
+                                        ],
+                                        staticClass: "form-control",
+                                        on: {
+                                          change: function($event) {
+                                            var $$selectedVal = Array.prototype.filter
+                                              .call(
+                                                $event.target.options,
+                                                function(o) {
+                                                  return o.selected
+                                                }
+                                              )
+                                              .map(function(o) {
+                                                var val =
+                                                  "_value" in o
+                                                    ? o._value
+                                                    : o.value
+                                                return val
+                                              })
+                                            _vm.selectprice = $event.target
+                                              .multiple
+                                              ? $$selectedVal
+                                              : $$selectedVal[0]
+                                          }
+                                        }
+                                      },
+                                      [
+                                        _c(
+                                          "option",
+                                          {
+                                            attrs: {
+                                              selected: "",
+                                              disabled: ""
+                                            }
+                                          },
+                                          [_vm._v("Select Price")]
+                                        ),
+                                        _vm._v(" "),
+                                        _c(
+                                          "option",
+                                          {
+                                            staticStyle: { color: "black" },
+                                            domProps: {
+                                              value: allroom.room_price
+                                            }
+                                          },
+                                          [
+                                            _vm._v(
+                                              "\n                          " +
+                                                _vm._s(allroom.room_price) +
+                                                "\n                        "
+                                            )
+                                          ]
+                                        )
+                                      ]
                                     )
-                                  })
-                                ],
-                                2
-                              ),
-                              _vm._v(" "),
-                              _vm.errors.room_prices
-                                ? _c("small", { staticClass: "text-danger" }, [
-                                    _vm._v(_vm._s(_vm.errors.room_prices[0]))
                                   ])
-                                : _vm._e()
-                            ])
+                                }),
+                                _vm._v(" "),
+                                _vm.errors.selectprice
+                                  ? _c(
+                                      "small",
+                                      { staticClass: "text-danger" },
+                                      [
+                                        _vm._v(
+                                          _vm._s(_vm.errors.selectprice[0])
+                                        )
+                                      ]
+                                    )
+                                  : _vm._e()
+                              ],
+                              2
+                            )
                           ])
                         ]),
                         _vm._v(" "),
@@ -46622,7 +48132,7 @@ var render = function() {
                                     staticClass: "form-label",
                                     attrs: { for: "exampleInputEmail3" }
                                   },
-                                  [_vm._v("Pay Amount ")]
+                                  [_vm._v("Pay Amount\n                      ")]
                                 ),
                                 _vm._v(" "),
                                 _c("input", {
@@ -46669,7 +48179,7 @@ var render = function() {
                                     staticClass: "form-label",
                                     attrs: { for: "exampleInputEmail3" }
                                   },
-                                  [_vm._v("Due  Amount")]
+                                  [_vm._v("Due Amount")]
                                 ),
                                 _vm._v(" "),
                                 _c("input", {
@@ -46793,7 +48303,13 @@ var render = function() {
                                 return _c(
                                   "option",
                                   { domProps: { value: customertype.id } },
-                                  [_vm._v(_vm._s(customertype.cus_type))]
+                                  [
+                                    _vm._v(
+                                      "\n                    " +
+                                        _vm._s(customertype.cus_type) +
+                                        "\n                  "
+                                    )
+                                  ]
                                 )
                               })
                             ],
@@ -46947,7 +48463,7 @@ var render = function() {
                               staticClass: "form-label",
                               attrs: { for: "exampleInputphone" }
                             },
-                            [_vm._v("Address ")]
+                            [_vm._v("Address\n                ")]
                           ),
                           _vm._v(" "),
                           _c("input", {
@@ -47040,7 +48556,11 @@ var render = function() {
                                     staticClass: "form-label",
                                     attrs: { for: "exampleInputdate" }
                                   },
-                                  [_vm._v("Choice Image ")]
+                                  [
+                                    _vm._v(
+                                      "Choice Image\n                      "
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
                                 _c("input", {
@@ -47162,23 +48682,31 @@ var render = function() {
                               [_vm._v("Select Customer Name")]
                             ),
                             _vm._v(" "),
-                            _vm._l(_vm.customers, function(customer) {
+                            _vm._l(_vm.reservationcustomers, function(
+                              reservationcustomer
+                            ) {
                               return _c(
                                 "option",
                                 {
                                   staticStyle: { color: "black" },
-                                  domProps: { value: customer.id }
+                                  domProps: { value: reservationcustomer.id }
                                 },
-                                [_vm._v(_vm._s(customer.full_name))]
+                                [
+                                  _vm._v(
+                                    "\n                  " +
+                                      _vm._s(reservationcustomer.full_name) +
+                                      "\n                "
+                                  )
+                                ]
                               )
                             })
                           ],
                           2
                         ),
                         _vm._v(" "),
-                        _vm.errors.customerid
+                        _vm.errors.reservationcustomer
                           ? _c("small", { staticClass: "text-danger" }, [
-                              _vm._v(_vm._s(_vm.errors.customerid[0]))
+                              _vm._v(_vm._s(_vm.errors.reservationcustomer[0]))
                             ])
                           : _vm._e()
                       ]),
@@ -47238,8 +48766,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    _vm._s(getservice.service_name) +
-                                      "\r\n                                            "
+                                    "\n                  " +
+                                      _vm._s(getservice.service_name) +
+                                      "\n                "
                                   )
                                 ]
                               )
@@ -47357,8 +48886,9 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    _vm._s(getserviceprice.service_price) +
-                                      " TK"
+                                    "\n                  " +
+                                      _vm._s(getserviceprice.service_price) +
+                                      " TK\n                "
                                   )
                                 ]
                               )
@@ -47379,36 +48909,71 @@ var render = function() {
                           "label",
                           {
                             staticClass: "form-label",
-                            attrs: { for: "exampleInputphone" }
+                            attrs: { for: "exampleInputText1" }
                           },
-                          [_vm._v("Service total ")]
+                          [_vm._v("Select Service Price")]
                         ),
                         _vm._v(" "),
-                        _c("input", {
-                          directives: [
-                            {
-                              name: "model",
-                              rawName: "v-model",
-                              value: _vm.service_total,
-                              expression: "service_total"
-                            }
-                          ],
-                          staticClass: "form-control",
-                          attrs: {
-                            type: "text",
-                            id: "totalprices",
-                            placeholder: "Service total"
-                          },
-                          domProps: { value: _vm.service_total },
-                          on: {
-                            input: function($event) {
-                              if ($event.target.composing) {
-                                return
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.service_total,
+                                expression: "service_total"
                               }
-                              _vm.service_total = $event.target.value
+                            ],
+                            staticClass: "form-control",
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.service_total = $event.target.multiple
+                                  ? $$selectedVal
+                                  : $$selectedVal[0]
+                              }
                             }
-                          }
-                        }),
+                          },
+                          [
+                            _c(
+                              "option",
+                              { attrs: { selected: "", disabled: "" } },
+                              [_vm._v("Select Service Price")]
+                            ),
+                            _vm._v(" "),
+                            _vm._l(_vm.getserviceprices, function(
+                              getservicepric
+                            ) {
+                              return _c(
+                                "option",
+                                {
+                                  domProps: {
+                                    value: getservicepric.service_price
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                  " +
+                                      _vm._s(
+                                        getservicepric.service_price *
+                                          _vm.service_unit
+                                      ) +
+                                      " TK\n                "
+                                  )
+                                ]
+                              )
+                            })
+                          ],
+                          2
+                        ),
                         _vm._v(" "),
                         _vm.errors.service_total
                           ? _c("small", { staticClass: "text-danger" }, [
@@ -47442,19 +49007,82 @@ var render = function() {
         _vm._l(_vm.roomTwos, function(roomtwo) {
           return _c(
             "div",
-            { key: roomtwo.id, staticClass: " col-md-2 col-sm-12 " },
+            {
+              key: roomtwo.id,
+              staticClass: "col-md-2 col-sm-12",
+              on: {
+                click: function($event) {
+                  return _vm.GetRoom(roomtwo.id)
+                }
+              }
+            },
             [
-              _c("div", { staticClass: "card profile-card my-2" }, [
-                _c("div", { staticClass: "card-body profile-card-info" }, [
-                  _c("img", { attrs: { src: "backend/img/bed2.png" } }),
+              _c(
+                "div",
+                {
+                  staticClass: "card profile-card my-2",
+                  attrs: {
+                    "data-bs-toggle": "modal",
+                    "data-bs-target": "#exampleModal"
+                  }
+                },
+                [
+                  roomtwo.room_status == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "card-body profile-card-info" },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomtwo.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "h6",
-                    { staticClass: "card-subtitle mb-2 text-muted my-3" },
-                    [_vm._v(_vm._s(roomtwo.number))]
-                  )
-                ])
-              ])
+                  roomtwo.room_status == 1
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "card-body profile-card-info",
+                          staticStyle: { "background-color": "#059862" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomtwo.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]
+              )
             ]
           )
         }),
@@ -47473,19 +49101,83 @@ var render = function() {
         _vm._l(_vm.roomThrees, function(roomthree) {
           return _c(
             "div",
-            { key: roomthree.id, staticClass: " col-md-2 col-sm-12 " },
+            {
+              key: roomthree.id,
+              staticClass: "col-md-2 col-sm-12",
+              on: {
+                click: function($event) {
+                  return _vm.GetRoom(roomthree.id)
+                }
+              }
+            },
             [
-              _c("div", { staticClass: "card profile-card my-2" }, [
-                _c("div", { staticClass: "card-body profile-card-info" }, [
-                  _c("img", { attrs: { src: "backend/img/bed1.png" } }),
+              _c(
+                "div",
+                {
+                  staticClass: "card profile-card my-2",
+                  attrs: {
+                    "data-bs-toggle": "modal",
+                    "data-bs-target": "#exampleModal",
+                    id: "exampleModal"
+                  }
+                },
+                [
+                  roomthree.room_status == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "card-body profile-card-info" },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomthree.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "h6",
-                    { staticClass: "card-subtitle mb-2 text-muted my-3" },
-                    [_vm._v(_vm._s(roomthree.number))]
-                  )
-                ])
-              ])
+                  roomthree.room_status == 1
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "card-body profile-card-info",
+                          staticStyle: { "background-color": "#059862" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomthree.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]
+              )
             ]
           )
         }),
@@ -47504,19 +49196,82 @@ var render = function() {
         _vm._l(_vm.roomFours, function(roomfour) {
           return _c(
             "div",
-            { key: roomfour.id, staticClass: " col-md-2 col-sm-12 " },
+            {
+              key: roomfour.id,
+              staticClass: "col-md-2 col-sm-12",
+              on: {
+                click: function($event) {
+                  return _vm.GetRoom(roomfour.id)
+                }
+              }
+            },
             [
-              _c("div", { staticClass: "card profile-card my-2" }, [
-                _c("div", { staticClass: "card-body profile-card-info" }, [
-                  _c("img", { attrs: { src: "backend/img/bed-icon.png" } }),
+              _c(
+                "div",
+                {
+                  staticClass: "card profile-card my-2",
+                  attrs: {
+                    "data-bs-toggle": "modal",
+                    "data-bs-target": "#exampleModal"
+                  }
+                },
+                [
+                  roomfour.room_status == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "card-body profile-card-info" },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomfour.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "h6",
-                    { staticClass: "card-subtitle mb-2 text-muted my-3" },
-                    [_vm._v(_vm._s(roomfour.number))]
-                  )
-                ])
-              ])
+                  roomfour.room_status == 1
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "card-body profile-card-info",
+                          staticStyle: { "background-color": "#059862" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomfour.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]
+              )
             ]
           )
         }),
@@ -47535,19 +49290,82 @@ var render = function() {
         _vm._l(_vm.roomFives, function(roomfive) {
           return _c(
             "div",
-            { key: roomfive.id, staticClass: " col-md-2 col-sm-12 " },
+            {
+              key: roomfive.id,
+              staticClass: "col-md-2 col-sm-12",
+              on: {
+                click: function($event) {
+                  return _vm.GetRoom(roomfive.id)
+                }
+              }
+            },
             [
-              _c("div", { staticClass: "card profile-card my-2" }, [
-                _c("div", { staticClass: "card-body profile-card-info" }, [
-                  _c("img", { attrs: { src: "backend/img/bed-icon.png" } }),
+              _c(
+                "div",
+                {
+                  staticClass: "card profile-card my-2",
+                  attrs: {
+                    "data-bs-toggle": "modal",
+                    "data-bs-target": "#exampleModal"
+                  }
+                },
+                [
+                  roomfive.room_status == 0
+                    ? _c(
+                        "div",
+                        { staticClass: "card-body profile-card-info" },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomfive.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e(),
                   _vm._v(" "),
-                  _c(
-                    "h6",
-                    { staticClass: "card-subtitle mb-2 text-muted my-3" },
-                    [_vm._v(_vm._s(roomfive.number))]
-                  )
-                ])
-              ])
+                  roomfive.room_status == 1
+                    ? _c(
+                        "div",
+                        {
+                          staticClass: "card-body profile-card-info",
+                          staticStyle: { "background-color": "#059862" }
+                        },
+                        [
+                          _c("img", {
+                            attrs: { src: "backend/img/bed-icon.png" }
+                          }),
+                          _vm._v(" "),
+                          _c(
+                            "h6",
+                            {
+                              staticClass: "card-subtitle mb-2 text-muted my-3"
+                            },
+                            [
+                              _vm._v(
+                                "\n              " +
+                                  _vm._s(roomfive.number) +
+                                  "\n            "
+                              )
+                            ]
+                          )
+                        ]
+                      )
+                    : _vm._e()
+                ]
+              )
             ]
           )
         }),
@@ -47578,7 +49396,7 @@ var staticRenderFns = [
                 staticClass: "btn btn-sm btn-outline-secondary",
                 attrs: { type: "button" }
               },
-              [_vm._v("Share")]
+              [_vm._v("\n          Share\n        ")]
             ),
             _vm._v(" "),
             _c(
@@ -47587,7 +49405,7 @@ var staticRenderFns = [
                 staticClass: "btn btn-sm btn-outline-secondary",
                 attrs: { type: "button" }
               },
-              [_vm._v("Export")]
+              [_vm._v("\n          Export\n        ")]
             )
           ]),
           _vm._v(" "),
@@ -47599,54 +49417,12 @@ var staticRenderFns = [
             },
             [
               _c("span", { attrs: { "data-feather": "calendar" } }),
-              _vm._v("\r\n                    This week\r\n                ")
+              _vm._v("\n        This week\n      ")
             ]
           )
         ])
       ]
     )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("section", [
-      _c("h1", { staticClass: "text-center text-muted my-3" }, [
-        _vm._v("Room Check In And Check Out Informatuins")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "row my-5 " }, [
-        _c("div", { staticClass: " col-md-2 col-sm-12 m-auto" }, [
-          _c("div", { staticClass: "card profile-card my-2" }, [
-            _c("div", { staticClass: "card-body profile-card-info" }, [
-              _c("span", {
-                staticClass: "my-3 profile-card-info-icon",
-                attrs: { "data-feather": "user-x" }
-              }),
-              _vm._v(" "),
-              _c("h3", { staticClass: "card-title" }, [_vm._v("14")]),
-              _vm._v(" "),
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Today C/In")])
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: " col-md-2 col-sm-12 m-auto" }, [
-          _c("div", { staticClass: "card profile-card my-2" }, [
-            _c("div", { staticClass: "card-body profile-card-info" }, [
-              _c("span", {
-                staticClass: "my-3 profile-card-info-icon",
-                attrs: { "data-feather": "user-x" }
-              }),
-              _vm._v(" "),
-              _c("h3", { staticClass: "card-title" }, [_vm._v("20")]),
-              _vm._v(" "),
-              _c("h5", { staticClass: "card-title" }, [_vm._v("Today C/out")])
-            ])
-          ])
-        ])
-      ])
-    ])
   },
   function() {
     var _vm = this
@@ -47671,7 +49447,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-title mb-0" }, [
-      _c("h4", { staticClass: "mb-0" }, [_vm._v("Create Customer ")])
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("Create Customer")])
     ])
   },
   function() {
@@ -47693,13 +49469,13 @@ var staticRenderFns = [
           staticClass: "btn btn-secondary",
           attrs: { type: "button", "data-bs-dismiss": "modal" }
         },
-        [_vm._v("Close")]
+        [_vm._v("\n                Close\n              ")]
       ),
       _vm._v(" "),
       _c(
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Save ")]
+        [_vm._v("Clear")]
       )
     ])
   },
@@ -47714,13 +49490,13 @@ var staticRenderFns = [
           staticClass: "btn btn-secondary",
           attrs: { type: "button", "data-bs-dismiss": "modal" }
         },
-        [_vm._v("Close")]
+        [_vm._v("\n                Close\n              ")]
       ),
       _vm._v(" "),
       _c(
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Save ")]
+        [_vm._v("Save")]
       )
     ])
   },
@@ -47735,13 +49511,34 @@ var staticRenderFns = [
           staticClass: "btn btn-secondary",
           attrs: { type: "button", "data-bs-dismiss": "modal" }
         },
-        [_vm._v("Close")]
+        [_vm._v("\n                Close\n              ")]
       ),
       _vm._v(" "),
       _c(
         "button",
         { staticClass: "btn btn-primary", attrs: { type: "submit" } },
-        [_vm._v("Add Service ")]
+        [_vm._v("Save")]
+      )
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-footer" }, [
+      _c(
+        "button",
+        {
+          staticClass: "btn btn-secondary",
+          attrs: { type: "button", "data-bs-dismiss": "modal" }
+        },
+        [_vm._v("\n                Close\n              ")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        { staticClass: "btn btn-primary", attrs: { type: "submit" } },
+        [_vm._v("\n                Add Service\n              ")]
       )
     ])
   }
@@ -49685,9 +51482,7 @@ var render = function() {
                       { staticClass: "btn btn-info", attrs: { to: "/room" } },
                       [
                         _c("i", { staticClass: "fa fa-plus" }),
-                        _vm._v(
-                          "All Room\r\n                                    "
-                        )
+                        _vm._v("All Room\n              ")
                       ]
                     )
                   ],
@@ -49703,7 +51498,7 @@ var render = function() {
         _c("div", { staticClass: "col-lg-12" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "card  " }, [
+              _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "div",
@@ -49768,7 +51563,11 @@ var render = function() {
                                 _c(
                                   "option",
                                   { attrs: { selected: "", disabled: "" } },
-                                  [_vm._v("Select Rome Category ")]
+                                  [
+                                    _vm._v(
+                                      "\n                          Select Rome Category\n                        "
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
                                 _vm._l(_vm.roomcategories, function(
@@ -49777,7 +51576,13 @@ var render = function() {
                                   return _c(
                                     "option",
                                     { domProps: { value: roomcategorie.id } },
-                                    [_vm._v(_vm._s(roomcategorie.name))]
+                                    [
+                                      _vm._v(
+                                        "\n                          " +
+                                          _vm._s(roomcategorie.name) +
+                                          "\n                        "
+                                      )
+                                    ]
                                   )
                                 })
                               ],
@@ -49996,7 +51801,7 @@ var render = function() {
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "number",
+                                type: "text",
                                 id: "exampleInputEmail3",
                                 placeholder: "Rome Number"
                               },
@@ -50030,7 +51835,11 @@ var render = function() {
                               staticClass: "btn btn-primary",
                               attrs: { type: "submit" }
                             },
-                            [_vm._v("Submit")]
+                            [
+                              _vm._v(
+                                "\n                      Submit\n                    "
+                              )
+                            ]
                           )
                         ]
                       )
@@ -50104,9 +51913,7 @@ var render = function() {
                       { staticClass: "btn btn-info", attrs: { to: "/room" } },
                       [
                         _c("i", { staticClass: "fa fa-plus" }),
-                        _vm._v(
-                          "All Room\r\n                                    "
-                        )
+                        _vm._v("All Room\n              ")
                       ]
                     )
                   ],
@@ -50122,7 +51929,7 @@ var render = function() {
         _c("div", { staticClass: "col-lg-12" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "card  " }, [
+              _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "div",
@@ -50187,7 +51994,11 @@ var render = function() {
                                 _c(
                                   "option",
                                   { attrs: { selected: "", disabled: "" } },
-                                  [_vm._v("Select Rome Category ")]
+                                  [
+                                    _vm._v(
+                                      "\n                          Select Rome Category\n                        "
+                                    )
+                                  ]
                                 ),
                                 _vm._v(" "),
                                 _vm._l(_vm.roomcategories, function(
@@ -50196,7 +52007,13 @@ var render = function() {
                                   return _c(
                                     "option",
                                     { domProps: { value: roomcategorie.id } },
-                                    [_vm._v(_vm._s(roomcategorie.name))]
+                                    [
+                                      _vm._v(
+                                        "\n                          " +
+                                          _vm._s(roomcategorie.name) +
+                                          "\n                        "
+                                      )
+                                    ]
                                   )
                                 })
                               ],
@@ -50415,7 +52232,7 @@ var render = function() {
                               ],
                               staticClass: "form-control",
                               attrs: {
-                                type: "number",
+                                type: "text",
                                 id: "exampleInputEmail3",
                                 placeholder: "Rome Number"
                               },
@@ -50447,7 +52264,11 @@ var render = function() {
                               staticClass: "btn btn-primary",
                               attrs: { type: "submit" }
                             },
-                            [_vm._v("Update")]
+                            [
+                              _vm._v(
+                                "\n                      Update\n                    "
+                              )
+                            ]
                           )
                         ]
                       )
@@ -50468,7 +52289,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-title mb-0" }, [
-      _c("h4", { staticClass: "mb-0" }, [_vm._v(" Customers Room")])
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("Customers Room")])
     ])
   }
 ]
@@ -53994,9 +55815,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-plus" }),
-                        _vm._v(
-                          "Create Room Category\r\n                                    "
-                        )
+                        _vm._v("Create Room Category\n              ")
                       ]
                     )
                   ],
@@ -54012,7 +55831,7 @@ var render = function() {
         _c("div", { staticClass: "col-lg-12" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "card  " }, [
+              _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "div",
@@ -54127,53 +55946,6 @@ var render = function() {
                               : _vm._e()
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-label",
-                                attrs: { for: "exampleInputEmail3" }
-                              },
-                              [_vm._v("Price")]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.form.price,
-                                  expression: "form.price"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "number",
-                                id: "exampleInputEmail3",
-                                placeholder: "Enter Price"
-                              },
-                              domProps: { value: _vm.form.price },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.form,
-                                    "price",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _vm.errors.price
-                              ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.price[0]))
-                                ])
-                              : _vm._e()
-                          ]),
-                          _vm._v(" "),
                           _c("br"),
                           _vm._v(" "),
                           _c(
@@ -54182,7 +55954,11 @@ var render = function() {
                               staticClass: "btn btn-primary",
                               attrs: { type: "submit" }
                             },
-                            [_vm._v("Submit")]
+                            [
+                              _vm._v(
+                                "\n                      Submit\n                    "
+                              )
+                            ]
                           )
                         ]
                       )
@@ -54259,9 +56035,7 @@ var render = function() {
                       },
                       [
                         _c("i", { staticClass: "fa fa-plus" }),
-                        _vm._v(
-                          " Room Category\r\n                                    "
-                        )
+                        _vm._v(" Room Category\n              ")
                       ]
                     )
                   ],
@@ -54277,7 +56051,7 @@ var render = function() {
         _c("div", { staticClass: "col-lg-12" }, [
           _c("div", { staticClass: "row" }, [
             _c("div", { staticClass: "col-lg-12" }, [
-              _c("div", { staticClass: "card  " }, [
+              _c("div", { staticClass: "card" }, [
                 _c("div", { staticClass: "card-body" }, [
                   _c(
                     "div",
@@ -54392,53 +56166,6 @@ var render = function() {
                               : _vm._e()
                           ]),
                           _vm._v(" "),
-                          _c("div", { staticClass: "form-group" }, [
-                            _c(
-                              "label",
-                              {
-                                staticClass: "form-label",
-                                attrs: { for: "exampleInputEmail3" }
-                              },
-                              [_vm._v("Price")]
-                            ),
-                            _vm._v(" "),
-                            _c("input", {
-                              directives: [
-                                {
-                                  name: "model",
-                                  rawName: "v-model",
-                                  value: _vm.form.price,
-                                  expression: "form.price"
-                                }
-                              ],
-                              staticClass: "form-control",
-                              attrs: {
-                                type: "number",
-                                id: "exampleInputEmail3",
-                                placeholder: "Enter Price"
-                              },
-                              domProps: { value: _vm.form.price },
-                              on: {
-                                input: function($event) {
-                                  if ($event.target.composing) {
-                                    return
-                                  }
-                                  _vm.$set(
-                                    _vm.form,
-                                    "price",
-                                    $event.target.value
-                                  )
-                                }
-                              }
-                            }),
-                            _vm._v(" "),
-                            _vm.errors.price
-                              ? _c("small", { staticClass: "text-danger" }, [
-                                  _vm._v(_vm._s(_vm.errors.price[0]))
-                                ])
-                              : _vm._e()
-                          ]),
-                          _vm._v(" "),
                           _c("br"),
                           _vm._v(" "),
                           _c(
@@ -54447,7 +56174,11 @@ var render = function() {
                               staticClass: "btn btn-primary",
                               attrs: { type: "submit" }
                             },
-                            [_vm._v("Update")]
+                            [
+                              _vm._v(
+                                "\n                      Update\n                    "
+                              )
+                            ]
                           )
                         ]
                       )
@@ -54468,7 +56199,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "card-title mb-0" }, [
-      _c("h4", { staticClass: "mb-0" }, [_vm._v("Update  Room Category")])
+      _c("h4", { staticClass: "mb-0" }, [_vm._v("Update Room Category")])
     ])
   }
 ]

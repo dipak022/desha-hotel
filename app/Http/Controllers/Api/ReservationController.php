@@ -44,7 +44,7 @@ class ReservationController extends Controller
     {
 
         $bookingIndate=$request->check_in_date;
-        $roomNumbe=$request->room_cag_id;
+        $roomNumbe=$request->selectroomnumber;
         $bookingOutdate=$request->check_out_date;
 
         
@@ -95,27 +95,29 @@ class ReservationController extends Controller
             'check_out_time' => 'required',
             'number_of_adult' => 'required',
             'customerid' => 'required',
-            'selectedClass' => 'required',
-            'room_cag_id' => 'required',
-            'room_floor_id' => 'required',
-            'room_prices' => 'required',
+            'selectcategoryroom' => 'required',
+            'selectroomnumber' => 'required',
+            'selectfloornumber' => 'required',
+            'selectprice' => 'required',
             'pay_amount' => 'required',
             'due_amount' => 'required',
         ]);
-        
+        //selectcategoryroom selectroomnumber selectfloornumber selectprice
         $data['check_in_date'] = $request->check_in_date;
         $data['check_in_time'] = $request->check_in_time;
         $data['check_out_date'] = $request->check_out_date;
         $data['check_out_time'] = $request->check_out_time;
         $data['number_of_adult'] = $request->number_of_adult;
         $data['customers_id'] = $request->customerid;
-        $data['room_categ_id'] = $request->selectedClass;
-        $data['rooms_id'] = $request->room_cag_id;
-        $data['room_floor'] = $request->room_floor_id;
-        $data['room_price'] = $request->room_prices;
+        $data['room_categ_id'] = $request->selectcategoryroom;
+        $data['rooms_id'] = $request->selectroomnumber;
+        $data['room_floor'] = $request->selectfloornumber;
+        $data['room_price'] = $request->selectprice;
         $data['pay_amount'] = $request->pay_amount;
         $data['due_amount'] = $request->due_amount;
         $data['status'] = 0;
+        
+        //return response()->json($data);
         
         $save = DB::table('reservation')->insert($data);
 

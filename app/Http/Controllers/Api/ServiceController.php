@@ -43,12 +43,16 @@ class ServiceController extends Controller
             'service_total' => 'required',
             
         ]);
-
+        //$datas = array();
+        //$datas['room_price'] = $request->service_price;
+        //$done=DB::table('reservation')->where('id',$id)->update($datas);
         $data = array();
+
         $data['service_name'] = $request->service_name;
         $data['service_unit'] = $request->service_unit;
         $data['service_price'] = $request->service_price;
         $data['service_total'] = $request->service_total;
+       
         
         $save = DB::table('service')->insert($data);
     }
