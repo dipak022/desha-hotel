@@ -9,17 +9,32 @@
   <meta name="generator" content="Hugo 0.80.0">
   <meta name="csrf-token" content="{{ csrf_token() }}" />
   <title>Desha -Dashboard</title>
- <link href="{{asset('css/app.css')}}" rel="stylesheet">
-
-  <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/dashboard/"> -->
-
- 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
+ <link href="{{asset('css/app.css')}}" rel="stylesheet"/>
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
  
 
 
-  <style>
+ 
+
+<style>
+    /* new style start */
+
+
+
+
+    .navbar-nav li {
+      display: block;
+      width: 100%;
+    }
+
+    .navbar-nav li a {
+      margin-left: 30px;
+      color: black;
+    }
+
+    /* new style end */
+
     .bd-placeholder-img {
       font-size: 1.125rem;
       text-anchor: middle;
@@ -65,6 +80,9 @@
   <nav  class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" >
         <div class="position-sticky pt-3">
           <ul class="nav flex-column" id="navbarids" style="display: none;" v-show="$route.path === '/' || $route.path === '/register'  || $route.path === '/forgate' ? false : true ">
+         
+          <li class="nav-item panel panel-default" id="dropdown">
+             
             <li class="nav-item">
               <router-link class="nav-link active" aria-current="page" to="/home">
                 <span data-feather="home"></span>
@@ -169,7 +187,56 @@
                 All Service 
               </router-link>
             </li>
+            <!-- Reservation category Start-->
+            <li class="nav-item">
+              <router-link class="nav-link" to="/store-category">
+                <span data-feather="file"></span>
+                Create Category
+              </router-link>
+            </li>
+
             
+            <li class="nav-item">
+              <router-link class="nav-link" to="/allcategory">
+                <span data-feather="file"></span>
+                All Category
+              </router-link>
+            </li>
+
+            <li class="nav-item">
+              <router-link class="nav-link" to="/store-hallservices">
+                <span data-feather="file"></span>
+                Create hall Services
+              </router-link>
+            </li>
+
+            
+            <li class="nav-item">
+              <router-link class="nav-link" to="/allhallservices">
+                <span data-feather="file"></span>
+                All Hall Services
+              </router-link>
+
+              <li class="nav-item">
+              <router-link class="nav-link" to="/hall-reservation-system">
+                <span data-feather="file"></span>
+                Hall Reservation System
+              </router-link>
+
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/store-hallreservation">
+                <span data-feather="file"></span>
+                Create hallreservation
+              </router-link>
+            </li>
+            <li class="nav-item">
+              <router-link class="nav-link" to="/hallreservation">
+                <span data-feather="file"></span>
+                All hallreservation
+              </router-link>
+            </li>
+            <!--Reservation category End  -->
             <li class="nav-item">
               <router-link class="nav-link" to="/store-roomimage">
                 <span data-feather="file"></span>
@@ -199,18 +266,7 @@
                 All halltype 
               </router-link>
             </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/store-hallreservation">
-                <span data-feather="file"></span>
-                Create hallreservation
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link class="nav-link" to="/hallreservation">
-                <span data-feather="file"></span>
-                All hallreservation
-              </router-link>
-            </li>
+           
             <li class="nav-item">
               <router-link class="nav-link" to="/store-company">
                 <span data-feather="file"></span>
@@ -396,8 +452,10 @@
             }
 
         </script>
+        
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
     crossorigin="anonymous"></script>
 
@@ -407,6 +465,8 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"
     integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha"
     crossorigin="anonymous"></script>
+  <script src="{{asset('backend/dashboard.js')}}"></script>
+
   <script src="{{asset('backend/dashboard.js')}}"></script>
 
 

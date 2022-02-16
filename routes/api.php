@@ -37,8 +37,9 @@ Route::apiResource('/roomimage', 'App\Http\Controllers\Api\RoomImageController')
 Route::apiResource('/reservation', 'App\Http\Controllers\Api\ReservationController');
 Route::apiResource('/service', 'App\Http\Controllers\Api\ServiceController');
 Route::apiResource('/serviceprovider', 'App\Http\Controllers\Api\ServiceProviderController');
-
-
+Route::apiResource('/category', 'App\Http\Controllers\Api\CategoryController');
+Route::apiResource('/hallservice', 'App\Http\Controllers\Api\HallServiceController');
+Route::apiResource('/hall-reservation-system', 'App\Http\Controllers\Api\HallServiceController');
 
 
 Route::get('/roomcategory', [App\Http\Controllers\Api\SubroomController::class, 'GetRoomCategory']);
@@ -72,7 +73,30 @@ Route::get('/selectedservicesprice', [App\Http\Controllers\Api\SubroomController
 
 
 Route::get('/reservationcustomer', [App\Http\Controllers\Api\SubroomController::class, 'reservationcustomers']);
+
 Route::post('/clear', [App\Http\Controllers\Api\SubroomController::class, 'reservationClear']);
+
+//hall reservation service pos
+
+Route::get('/cart/service/', [App\Http\Controllers\Api\CartController::class, 'cardservice']);
+
+Route::get('/vats', [App\Http\Controllers\Api\CartController::class, 'getvat']);
+
+Route::get('/addTocart/{id}', [App\Http\Controllers\Api\CartController::class, 'AddtoCart']);
+
+Route::get('/remove/cart/{id}', [App\Http\Controllers\Api\CartController::class, 'removeCart']);
+
+Route::get('/increment/{id}', [App\Http\Controllers\Api\CartController::class, 'Increment']);
+
+Route::get('/decrement/{id}', [App\Http\Controllers\Api\CartController::class, 'Decrement']);
+
+Route::get('/getting/service/{id}', [App\Http\Controllers\Api\CartController::class, 'getService']);
+
+//halltypes
+Route::get('/halltypes', [App\Http\Controllers\Api\HallDetailsController::class, 'gethalltypes']);
+
+
+Route::get('/find-hallreservation', [App\Http\Controllers\Api\HallDetailsController::class, 'find_hallreservation']);
 
 
 

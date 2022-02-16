@@ -45,19 +45,20 @@
                                                         </tr>
                                                     </thead>
                                                     <tbody>
-                                                        <tr v-for="room in filtersearch" :key="room.id">
+                                                        <tr v-for="hallreservation in filtersearch" :key="hallreservation.id">
                                                         
-                                                        <td>{{ room.floor_name }}</td>
-                                                        <td>{{ room.name }}</td>
-                                                        <td>{{ room.description }}</td>
-                                                        <td>{{ room.available_date }}</td>
-                                                        <td>{{ room.number }}</td>
+                                                        <td>{{ hallreservation.full_name }}</td>
+                                                        <td>{{ hallreservation.hall_name }}</td>
+                                                        <td>{{ hallreservation.check_in }}</td>
+                                                        <td>{{ hallreservation.session_day_hour_quantity }}</td>
+                                                        <td>{{ hallreservation.total_amount }}</td>
+                                                        <td>{{ hallreservation.total_guest }}</td>
                                                     
                                                         
                                                         <td>
                                                             <div class="flex align-items-center list-user-action">
                                                                 
-                                                                <router-link class="btn btn-sm btn-icon btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" :to="{name : 'edit-room', params :{id:room.id} }">
+                                                                <router-link class="btn btn-sm btn-icon btn-warning" data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" :to="{name : 'edit-hallreservation', params :{id:hallreservation.id} }">
                                                                     <span class="btn-inner">
                                                                     <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                                         <path d="M11.4925 2.78906H7.75349C4.67849 2.78906 2.75049 4.96606 2.75049 8.04806V16.3621C2.75049 19.4441 4.66949 21.6211 7.75349 21.6211H16.5775C19.6625 21.6211 21.5815 19.4441 21.5815 16.3621V12.3341" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -66,7 +67,7 @@
                                                                     </svg>
                                                                     </span>
                                                                 </router-link>
-                                                                <a class="btn btn-sm btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" @click="deletecustomer(room.id)">
+                                                                <a class="btn btn-sm btn-icon btn-danger" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" @click="deletehallreservation(hallreservation.id)">
                                                                     <span class="btn-inner">
                                                                     <svg width="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor">
                                                                         <path d="M19.3248 9.46826C19.3248 9.46826 18.7818 16.2033 18.4668 19.0403C18.3168 20.3953 17.4798 21.1893 16.1088 21.2143C13.4998 21.2613 10.8878 21.2643 8.27979 21.2093C6.96079 21.1823 6.13779 20.3783 5.99079 19.0473C5.67379 16.1853 5.13379 9.46826 5.13379 9.46826" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
@@ -105,27 +106,28 @@ export default {
     },
     data(){
         return{
-            rooms:[],
-            searchTerm :''
+            hallreservations: {},
+            searchTerm :'',
         }
 
-    },computed: {
+    },
+    computed: {
         filtersearch(){
-           return this.rooms.filter(room =>{
-              return room.name.match(this.searchTerm)
+           return this.hallreservations.filter(hallreservation =>{
+              return hallreservation.full_name.match(this.searchTerm)
             })
         }
 
     },
     methods:{
-        allRoom(){
-            axios.get('/api/room/')
+        allhallreservation(){
+            axios.get('/api/hallreservation/')
             .then(({ data })=>{
-                this.rooms = data
+                this.hallreservations = data
             })
             .catch()
         },
-        deletecustomer(id){
+        deletehallreservation(id){
             Swal.fire({
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
@@ -136,14 +138,14 @@ export default {
             confirmButtonText: 'Yes, delete it!'
             }).then((result) => {
             if (result.value) {
-                axios.delete('/api/room/'+id)
+                axios.delete('/api/hallreservation/'+id)
                 .then(()=>{
-                    this.rooms =this.rooms.filter(room =>{
-                        return room.id != id;
+                    this.hallreservations =this.hallreservations.filter(hallreservation =>{
+                        return hallreservation.id != id;
                     })
                 })
                 .catch(()=>{
-                    this.$router.push({ name : 'room'})
+                    this.$router.push({ name : 'hallreservation'})
                 })
                 Swal.fire(
                 'Deleted!',
@@ -156,7 +158,7 @@ export default {
         }
     },
     mounted(){
-        this.allRoom();
+        this.allhallreservation();
 
     }
     

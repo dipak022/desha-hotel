@@ -16,8 +16,8 @@ class HallReservationController extends Controller
     {
         $hallreservation = DB::table('hallreservation')
             ->join('halltype','hallreservation.hall_id','halltype.id')
-            ->join('customertype','hallreservation.customer_id','customertype.id')
-            ->select('halltype.hall_name','customertype.name','hallreservation.*')
+            ->join('customer','hallreservation.customer_id','customer.id')
+            ->select('halltype.hall_name','customer.full_name','hallreservation.*')
             ->orderBy('hallreservation.id','DESC')
             ->get();
             
@@ -44,23 +44,25 @@ class HallReservationController extends Controller
     {
         $validated = $request->validate([
             'customer_id' => 'required',
-            'hall_id' => 'required',
+            'selectedHalltype' => 'required',
             'check_in' => 'required',
-            'check_out' => 'required',
-            'session_day_hour_quantity' => 'required',
-            'total_amount' => 'required',
+           
+            'quantity' => 'required',
+            'amount' => 'required',
             'total_guest' => 'required',
             
         ]);
+        
+             
 
         $data = array();
         $data['customer_id'] = $request->customer_id;
-        $data['hall_id'] = $request->hall_id;
+        $data['hall_id'] = $request->selectedHalltype;
         $data['check_in'] = $request->check_in;
         $data['check_out'] = $request->check_out;
-        $data['session_day_hour_quantity'] = $request->session_day_hour_quantity;
+        $data['session_day_hour_quantity'] = $request->quantity;
         $data['status'] = 0;
-        $data['total_amount'] = $request->total_amount;
+        $data['total_amount'] = $request->amount;
         $data['total_guest'] = $request->total_guest;
         
         $save = DB::table('hallreservation')->insert($data);

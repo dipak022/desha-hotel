@@ -198,7 +198,7 @@
                                                     
                                                     <div class="col-md-3">
                                                          <div class="form-group">
-                                                            <label class="form-label" for="exampleInputText1">Select Category Rome</label>
+                                                            <label class="form-label" for="exampleInputText1">Select Category Room</label>
                                                                 <select class="form-control" v-model="selectedClass">
                                                                     <option selected  disabled>Select Category Rome</option>
                                                                      <option :value="item.id" v-for="item in roomcategories" :key="item.id" >{{ item.name }}
