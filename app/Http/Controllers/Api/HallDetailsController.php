@@ -19,7 +19,6 @@ class HallDetailsController extends Controller
     public function find_hallreservation(){
         
         $hall = DB::table("hallreservation")
-        ->where("status",1)
         ->get();
         return response()->json($hall);
     }

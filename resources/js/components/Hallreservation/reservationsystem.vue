@@ -1,10 +1,9 @@
 <template>
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
         <br /><br /><br />
-        <div class="conatiner-fluid content-inner mt-n5 py-0"   :value="hallreservation.id"
-                                                        v-for="hallreservation in hallreservations"
-                                                        :key="hallreservation.id"  > 
-            <div class="row">
+        <div class="conatiner-fluid content-inner mt-n5 py-0"  :value="hallreservation.id" v-for="hallreservation in hallreservations" :key="hallreservation.id" > 
+        <div v-if="hallreservation.status==1">
+            <div class="row" >
                 <div class="col-lg-6 col-md-6">
                     <div class="card">
                         <div
@@ -879,7 +878,38 @@
                     </div>
                 </div>
             </div>
+            
         </div>
+         <div v-else>
+         <div class="form-group">
+                                                <label
+                                                    class="form-label"
+                                                    for="exampleInputEmail3"
+                                                    >Total Guest
+                                                </label>
+                                                <input
+                                                    type="number"
+                                                    class="form-control"
+                                                    id="exampleInputEmail3"
+                                                    placeholder="Total Guest"
+                                                    v-model="total_guest"
+                                                   
+                                                />
+                                                
+                                                <small
+                                                    class="text-danger"
+                                                    v-if="errors.total_guest"
+                                                    >{{
+                                                        errors.total_guest[0]
+                                                    }}</small
+                                                >
+                                            </div>
+        </div>
+         
+     </div>
+     
+     
+      
     </main>
 </template>
 <script>
@@ -888,6 +918,7 @@ export default {
         if (!User.loggedIn()) {
             this.$router.push({ name: "/" });
         }
+        //axios.get("/api/find-hallreservation/").then(({ data }) => (this.hallreservations = data));
     },
     data() {
         return {
@@ -941,11 +972,7 @@ export default {
             return sum;
         },
         FindHallBooked(){
-           axios.get('/api/find-hallreservation/')
-            .then(({ data })=>{
-                this.hallreservations = data
-            })
-            .catch()
+            axios.get("/api/find-hallreservation/").then(({ data }) => (this.hallreservations = data));
 
         }
     },
